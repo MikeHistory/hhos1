@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_b80b0a5d653548777bfe0a2871c8aadc {
+                #map_69e5b02b197c5c35bea5bed01f2f109b {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,28 +39,27 @@
 <body>
     
     
-<div style="position: fixed; bottom: 50px; left: 50px; z-index:9999; font-size:14px; background-color:white; padding: 10px; border:2px solid grey; opacity:0.9;">
+<div style="
+    position: fixed; 
+    bottom: 50px; 
+    left: 50px; 
+    z-index:9999; 
+    font-size:14px; 
+    background-color:white; 
+    padding: 10px; 
+    border:2px solid #aaa;
+    border-radius: 5px;">
     <b>Time Periods</b><br>
 <span style="color:green">●</span> 1700-1800<br><span style="color:red">●</span> 1800-1900<br><span style="color:blue">●</span> 1900-2000<br></div>
     
-<style>
-    .mapLabel {
-        z-index: 1000 !important;  /* Ensure labels are on top of markers */
-    }
-</style>
-    
-    <h3 align="center" style="font-family:Arial; color:black; margin-top: 20px;">
-        Hidden Histories of Spotswood
-    </h3>
-    
-            <div class="folium-map" id="map_b80b0a5d653548777bfe0a2871c8aadc" ></div>
+            <div class="folium-map" id="map_69e5b02b197c5c35bea5bed01f2f109b" ></div>
         
 </body>
 <script>
     
     
-            var map_b80b0a5d653548777bfe0a2871c8aadc = L.map(
-                "map_b80b0a5d653548777bfe0a2871c8aadc",
+            var map_69e5b02b197c5c35bea5bed01f2f109b = L.map(
+                "map_69e5b02b197c5c35bea5bed01f2f109b",
                 {
                     center: [40.3839, -74.3982],
                     crs: L.CRS.EPSG3857,
@@ -74,153 +73,190 @@
 
         
     
-            var tile_layer_4f5564404fc940a2102efee05c7ddbe5 = L.tileLayer(
+            var tile_layer_b1b7358198234d4bd7e34a8380b2af17 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_b80b0a5d653548777bfe0a2871c8aadc);
+            ).addTo(map_69e5b02b197c5c35bea5bed01f2f109b);
         
     
-            var feature_group_4adc536047ac196496a3bd6fac08c0f7 = L.featureGroup(
+            var feature_group_3f5eb0361e9e33c2849f7e8030553325 = L.featureGroup(
                 {}
-            ).addTo(map_b80b0a5d653548777bfe0a2871c8aadc);
+            ).addTo(map_69e5b02b197c5c35bea5bed01f2f109b);
         
     
-            var marker_6cae1579863448e662d70ed2dc7f9d60 = L.marker(
+            var marker_a7dbad49c2a97510a86ae404d459cb70 = L.marker(
                 [40.3738, -74.4164],
                 {}
-            ).addTo(feature_group_4adc536047ac196496a3bd6fac08c0f7);
+            ).addTo(feature_group_3f5eb0361e9e33c2849f7e8030553325);
         
     
-            var icon_59921e4cc12bac297228895649753d8e = L.AwesomeMarkers.icon(
+            var icon_f6661e47cffc5e01c7a382066fc44046 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_6cae1579863448e662d70ed2dc7f9d60.setIcon(icon_59921e4cc12bac297228895649753d8e);
+            marker_a7dbad49c2a97510a86ae404d459cb70.setIcon(icon_f6661e47cffc5e01c7a382066fc44046);
         
     
-        var popup_16ebcb462ffda86f9ce5c3fc68eecbe4 = L.popup({"maxWidth": 250});
+        var popup_185868fbf076f5452d51fe114ef992e1 = L.popup({"maxWidth": 250});
 
         
             
-                var html_9e32218548644b7986c19712781df7ed = $(`<div id="html_9e32218548644b7986c19712781df7ed" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px;">         <b>Ten Eyk's Old Forge</b><br>         <img src='https://raw.githubusercontent.com/<your-username>/history-map/main/images/ten_eyk_forge.jpg' width='200px'><br>         Ten Eyks Forge, Old Forge Road's namesake.<br><br>         <i>Time Period: 1700-1800</i>     </div>     </div>`)[0];
-                popup_16ebcb462ffda86f9ce5c3fc68eecbe4.setContent(html_9e32218548644b7986c19712781df7ed);
+                var html_751a03ebcec3e2e10450e7d29c842ae4 = $(`<div id="html_751a03ebcec3e2e10450e7d29c842ae4" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">         <h4 style="margin:5px 0;">Ten Eyk's Old Forge</h4>         <img src='https://example.com/image7.jpg' width='200px'><br>         <p>Ten Eyks Forge, Old Forge Road's namesake.</p>         <p><i>Time Period: 1700-1800</i></p>     </div>     </div>`)[0];
+                popup_185868fbf076f5452d51fe114ef992e1.setContent(html_751a03ebcec3e2e10450e7d29c842ae4);
             
         
 
-        marker_6cae1579863448e662d70ed2dc7f9d60.bindPopup(popup_16ebcb462ffda86f9ce5c3fc68eecbe4)
+        marker_a7dbad49c2a97510a86ae404d459cb70.bindPopup(popup_185868fbf076f5452d51fe114ef992e1)
         ;
 
         
     
     
-            var marker_f1d2122d043375d27aded403dc4bca68 = L.marker(
+            var marker_c51459659a0f426a06be0ecb9add58ea = L.marker(
+                [40.3805, -74.4078],
+                {}
+            ).addTo(feature_group_3f5eb0361e9e33c2849f7e8030553325);
+        
+    
+            var icon_ef6ba578262627057ec5fe7bde43b304 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c51459659a0f426a06be0ecb9add58ea.setIcon(icon_ef6ba578262627057ec5fe7bde43b304);
+        
+    
+        var popup_9e646d1cf1fb929f30b67c30b528c500 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_adce7c2ec4a58e04a60e95cdf080798b = $(`<div id="html_adce7c2ec4a58e04a60e95cdf080798b" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">         <h4 style="margin:5px 0;">Weequahala's Old Dam</h4>         <img src='https://github.com/MikeHistory/Spotswood-History/blob/main/images/IMG_3345.jpeg?raw=true' width='200px'><br>         <p>Weeqhala's mill dam, referenced on several contemporary deeds as well as for several decades for.</p>         <p><i>Time Period: 1700-1800</i></p>     </div>     </div>`)[0];
+                popup_9e646d1cf1fb929f30b67c30b528c500.setContent(html_adce7c2ec4a58e04a60e95cdf080798b);
+            
+        
+
+        marker_c51459659a0f426a06be0ecb9add58ea.bindPopup(popup_9e646d1cf1fb929f30b67c30b528c500)
+        ;
+
+        
+    
+    
+            var marker_1e5794badce059c0e904af433f1b79dc = L.marker(
                 [40.3909, -74.3892],
                 {}
-            ).addTo(feature_group_4adc536047ac196496a3bd6fac08c0f7);
+            ).addTo(feature_group_3f5eb0361e9e33c2849f7e8030553325);
         
     
-            var icon_46a7fd3eb200989ee2042deae2864b2b = L.AwesomeMarkers.icon(
+            var icon_788267726df1c1d8f30fdc6f095994c8 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_f1d2122d043375d27aded403dc4bca68.setIcon(icon_46a7fd3eb200989ee2042deae2864b2b);
+            marker_1e5794badce059c0e904af433f1b79dc.setIcon(icon_788267726df1c1d8f30fdc6f095994c8);
         
     
-        var popup_674f410eec078bdb3f2b551e3ca52f81 = L.popup({"maxWidth": 250});
+        var popup_18fa86052c5c8f536ea660503926b162 = L.popup({"maxWidth": 250});
 
         
             
-                var html_2f52a03d1adfe3b971c402dea3ed9dc2 = $(`<div id="html_2f52a03d1adfe3b971c402dea3ed9dc2" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px;">         <b>St. Peter's Church</b><br>         <img src='https://raw.githubusercontent.com/<your-username>/history-map/main/images/st_peters_church.jpg' width='200px'><br>         First church in town, records date back to 1740's<br><br>         <i>Time Period: 1700-1800</i>     </div>     </div>`)[0];
-                popup_674f410eec078bdb3f2b551e3ca52f81.setContent(html_2f52a03d1adfe3b971c402dea3ed9dc2);
+                var html_2c81d6bacdfb59982f4d1cd6dffdf51f = $(`<div id="html_2c81d6bacdfb59982f4d1cd6dffdf51f" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">         <h4 style="margin:5px 0;">St. Peter's Church</h4>         <img src='images/St._Peters_Church_Spotswood.jpg' width='200px'><br>         <p>First church in town, records date back to 1740's</p>         <p><i>Time Period: 1700-1800</i></p>     </div>     </div>`)[0];
+                popup_18fa86052c5c8f536ea660503926b162.setContent(html_2c81d6bacdfb59982f4d1cd6dffdf51f);
             
         
 
-        marker_f1d2122d043375d27aded403dc4bca68.bindPopup(popup_674f410eec078bdb3f2b551e3ca52f81)
+        marker_1e5794badce059c0e904af433f1b79dc.bindPopup(popup_18fa86052c5c8f536ea660503926b162)
         ;
 
         
     
     
-            var feature_group_8b5a2817edb7e214a55e0c2c5c6e85d1 = L.featureGroup(
+            var feature_group_12e7e5260b48d9e17a833859078da3d3 = L.featureGroup(
                 {}
-            ).addTo(map_b80b0a5d653548777bfe0a2871c8aadc);
+            ).addTo(map_69e5b02b197c5c35bea5bed01f2f109b);
         
     
-            var marker_042080208154cbc9fe6c6821bf0870dc = L.marker(
+            var marker_dbd123a63603185d7d851be8eb80ff37 = L.marker(
                 [40.3808, -74.4079],
                 {}
-            ).addTo(feature_group_8b5a2817edb7e214a55e0c2c5c6e85d1);
+            ).addTo(feature_group_12e7e5260b48d9e17a833859078da3d3);
         
     
-            var icon_2861dbc4b46b5e01780417d5dd14328f = L.AwesomeMarkers.icon(
+            var icon_e828a969d229d01f7a9a40aea2c30460 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_042080208154cbc9fe6c6821bf0870dc.setIcon(icon_2861dbc4b46b5e01780417d5dd14328f);
+            marker_dbd123a63603185d7d851be8eb80ff37.setIcon(icon_e828a969d229d01f7a9a40aea2c30460);
         
     
-        var popup_6da762c4ae1ae422b9868945f0a8a530 = L.popup({"maxWidth": 250});
+        var popup_0487c927170732cc92844ea5b00aebde = L.popup({"maxWidth": 250});
 
         
             
-                var html_c5f01604e2a159337b579748a15d3a6e = $(`<div id="html_c5f01604e2a159337b579748a15d3a6e" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px;">         <b>Outcalt Hominy Mill</b><br>         <img src='https://raw.githubusercontent.com/<your-username>/history-map/main/images/outcalt_mill.jpg' width='200px'><br>         Founded by Judge John Outcalt on the site of Weequahala's old dam. Passed to son J.D. Outcalt and grandson John Outcalt. The height of John Outcalt's dam was the subject of a legal case that went all the way to the State Supreme Court.<br><br>         <i>Time Period: 1800-1900</i>     </div>     </div>`)[0];
-                popup_6da762c4ae1ae422b9868945f0a8a530.setContent(html_c5f01604e2a159337b579748a15d3a6e);
+                var html_bab01def0be0aef522e9be946fab0d40 = $(`<div id="html_bab01def0be0aef522e9be946fab0d40" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">         <h4 style="margin:5px 0;">Outcalt Hominy Mill</h4>         <img src='https://github.com/MikeHistory/map2.0/blob/main/IMG_2638.JPG?raw=true' width='200px'><br>         <p>Founded by Judge John Outcalt on the site of Weequahala's old dam. Passed to son J.D. Outcalt and grandson John Outcalt. The height of John Outcalt's dam was the subject of a legal case that went all the way to the State Supreme Court.</p>         <p><i>Time Period: 1800-1900</i></p>     </div>     </div>`)[0];
+                popup_0487c927170732cc92844ea5b00aebde.setContent(html_bab01def0be0aef522e9be946fab0d40);
             
         
 
-        marker_042080208154cbc9fe6c6821bf0870dc.bindPopup(popup_6da762c4ae1ae422b9868945f0a8a530)
+        marker_dbd123a63603185d7d851be8eb80ff37.bindPopup(popup_0487c927170732cc92844ea5b00aebde)
         ;
 
         
     
     
-            var feature_group_40a162c7177420ccb0a73d5c8724e439 = L.featureGroup(
+            var feature_group_371017322ecb2845528e330f75e74fff = L.featureGroup(
                 {}
-            ).addTo(map_b80b0a5d653548777bfe0a2871c8aadc);
+            ).addTo(map_69e5b02b197c5c35bea5bed01f2f109b);
         
     
-            var marker_bef74231d07bec131f24ca538b0f41fc = L.marker(
-                [40.3818, -74.4079],
+            var marker_17b5d4a17dcb341eef0b68f0399f8f80 = L.marker(
+                [40.3808, -74.4079],
                 {}
-            ).addTo(feature_group_40a162c7177420ccb0a73d5c8724e439);
+            ).addTo(feature_group_371017322ecb2845528e330f75e74fff);
         
     
-            var div_icon_9e4fae804b055cebc6296f2a373a1ca8 = L.divIcon({"className": "mapLabel", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid grey; white-space:nowrap; opacity:0.7; z-index:1000;\"\u003e\n        Outcalt Hominy Mill\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
-            marker_bef74231d07bec131f24ca538b0f41fc.setIcon(div_icon_9e4fae804b055cebc6296f2a373a1ca8);
+            var div_icon_3d3a54f32b165fc1d97305c272634716 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\"\u003e\n        Outcalt Hominy Mill\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
+            marker_17b5d4a17dcb341eef0b68f0399f8f80.setIcon(div_icon_3d3a54f32b165fc1d97305c272634716);
         
     
-            var marker_35ee1fa5aea58c96e38748e7bea26511 = L.marker(
-                [40.3748, -74.4164],
+            var marker_2e0916482aad90c74ef5c30a2d760f23 = L.marker(
+                [40.3738, -74.4164],
                 {}
-            ).addTo(feature_group_40a162c7177420ccb0a73d5c8724e439);
+            ).addTo(feature_group_371017322ecb2845528e330f75e74fff);
         
     
-            var div_icon_1479d96f0adc2705812e52346596028c = L.divIcon({"className": "mapLabel", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid grey; white-space:nowrap; opacity:0.7; z-index:1000;\"\u003e\n        Ten Eyk\u0027s Old Forge\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
-            marker_35ee1fa5aea58c96e38748e7bea26511.setIcon(div_icon_1479d96f0adc2705812e52346596028c);
+            var div_icon_ae9786acdc5c696f4f6f8cb6218c4198 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\"\u003e\n        Ten Eyk\u0027s Old Forge\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
+            marker_2e0916482aad90c74ef5c30a2d760f23.setIcon(div_icon_ae9786acdc5c696f4f6f8cb6218c4198);
         
     
-            var marker_0a82902f1ca51206f80db7747061a4e8 = L.marker(
-                [40.3919, -74.3892],
+            var marker_c5191ff7592db2fc91650a14b6b49467 = L.marker(
+                [40.3805, -74.4078],
                 {}
-            ).addTo(feature_group_40a162c7177420ccb0a73d5c8724e439);
+            ).addTo(feature_group_371017322ecb2845528e330f75e74fff);
         
     
-            var div_icon_a8f2a138a783abded04a7eb6c0cf3b53 = L.divIcon({"className": "mapLabel", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid grey; white-space:nowrap; opacity:0.7; z-index:1000;\"\u003e\n        St. Peter\u0027s Church\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
-            marker_0a82902f1ca51206f80db7747061a4e8.setIcon(div_icon_a8f2a138a783abded04a7eb6c0cf3b53);
+            var div_icon_068c829b7c207901600b840e27aad94b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\"\u003e\n        Weequahala\u0027s Old Dam\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
+            marker_c5191ff7592db2fc91650a14b6b49467.setIcon(div_icon_068c829b7c207901600b840e27aad94b);
         
     
-            var layer_control_dd522b1f1e1b04c33629f78d3bcf93bb = {
+            var marker_f24608be223d2393df57f3acdfa46d9e = L.marker(
+                [40.3909, -74.3892],
+                {}
+            ).addTo(feature_group_371017322ecb2845528e330f75e74fff);
+        
+    
+            var div_icon_759dc2099372564f9193803293bf4131 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\"\u003e\n        St. Peter\u0027s Church\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
+            marker_f24608be223d2393df57f3acdfa46d9e.setIcon(div_icon_759dc2099372564f9193803293bf4131);
+        
+    
+            var layer_control_7cb39f191d41a64aa7034bcaf3b69f81 = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_4f5564404fc940a2102efee05c7ddbe5,
+                    "openstreetmap" : tile_layer_b1b7358198234d4bd7e34a8380b2af17,
                 },
                 overlays :  {
-                    "1700-1800" : feature_group_4adc536047ac196496a3bd6fac08c0f7,
-                    "1800-1900" : feature_group_8b5a2817edb7e214a55e0c2c5c6e85d1,
-                    "Location Labels" : feature_group_40a162c7177420ccb0a73d5c8724e439,
+                    "1700-1800" : feature_group_3f5eb0361e9e33c2849f7e8030553325,
+                    "1800-1900" : feature_group_12e7e5260b48d9e17a833859078da3d3,
+                    "Location Labels" : feature_group_371017322ecb2845528e330f75e74fff,
                 },
             };
             L.control.layers(
-                layer_control_dd522b1f1e1b04c33629f78d3bcf93bb.base_layers,
-                layer_control_dd522b1f1e1b04c33629f78d3bcf93bb.overlays,
+                layer_control_7cb39f191d41a64aa7034bcaf3b69f81.base_layers,
+                layer_control_7cb39f191d41a64aa7034bcaf3b69f81.overlays,
                 {"autoZIndex": true, "collapsed": true, "position": "topright"}
-            ).addTo(map_b80b0a5d653548777bfe0a2871c8aadc);
+            ).addTo(map_69e5b02b197c5c35bea5bed01f2f109b);
         
 </script>
 </html>
