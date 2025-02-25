@@ -1,1043 +1,305 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": 4,
-   "id": "fdaf2a9b",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div style=\"width:100%;\"><div style=\"position:relative;width:100%;height:0;padding-bottom:60%;\"><span style=\"color:#565656\">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc=\"&lt;!DOCTYPE html&gt;\n",
-       "&lt;html&gt;\n",
-       "&lt;head&gt;\n",
-       "    \n",
-       "    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;\n",
-       "    \n",
-       "        &lt;script&gt;\n",
-       "            L_NO_TOUCH = false;\n",
-       "            L_DISABLE_3D = false;\n",
-       "        &lt;/script&gt;\n",
-       "    \n",
-       "    &lt;style&gt;html, body {width: 100%;height: 100%;margin: 0;padding: 0;}&lt;/style&gt;\n",
-       "    &lt;style&gt;#map {position:absolute;top:0;bottom:0;right:0;left:0;}&lt;/style&gt;\n",
-       "    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;script src=&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;\n",
-       "    \n",
-       "            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,\n",
-       "                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;\n",
-       "            &lt;style&gt;\n",
-       "                #map_5afec7bb8ffb416993b932c286c43a4b {\n",
-       "                    position: relative;\n",
-       "                    width: 100.0%;\n",
-       "                    height: 100.0%;\n",
-       "                    left: 0.0%;\n",
-       "                    top: 0.0%;\n",
-       "                }\n",
-       "                .leaflet-container { font-size: 1rem; }\n",
-       "            &lt;/style&gt;\n",
-       "        \n",
-       "    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css&quot;/&gt;\n",
-       "&lt;/head&gt;\n",
-       "&lt;body&gt;\n",
-       "    \n",
-       "    \n",
-       "    &lt;h3 align=&quot;center&quot; style =&quot;font-family:Arial; color:black; margin-top: 20px;&quot;&gt;\n",
-       "        Hidden Histories of Spotswood\n",
-       "    &lt;/h3&gt;\n",
-       "    \n",
-       "            &lt;div class=&quot;folium-map&quot; id=&quot;map_5afec7bb8ffb416993b932c286c43a4b&quot; &gt;&lt;/div&gt;\n",
-       "        \n",
-       "&lt;/body&gt;\n",
-       "&lt;script&gt;\n",
-       "    \n",
-       "    \n",
-       "            var map_5afec7bb8ffb416993b932c286c43a4b = L.map(\n",
-       "                &quot;map_5afec7bb8ffb416993b932c286c43a4b&quot;,\n",
-       "                {\n",
-       "                    center: [40.3839, -74.3982],\n",
-       "                    crs: L.CRS.EPSG3857,\n",
-       "                    zoom: 12,\n",
-       "                    zoomControl: true,\n",
-       "                    preferCanvas: false,\n",
-       "                }\n",
-       "            );\n",
-       "\n",
-       "            \n",
-       "\n",
-       "        \n",
-       "    \n",
-       "            var tile_layer_97904bf717dd8936dfc311f081e8ac15 = L.tileLayer(\n",
-       "                &quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,\n",
-       "                {&quot;attribution&quot;: &quot;Data by \\u0026copy; \\u003ca target=\\&quot;_blank\\&quot; href=\\&quot;http://openstreetmap.org\\&quot;\\u003eOpenStreetMap\\u003c/a\\u003e, under \\u003ca target=\\&quot;_blank\\&quot; href=\\&quot;http://www.openstreetmap.org/copyright\\&quot;\\u003eODbL\\u003c/a\\u003e.&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}\n",
-       "            ).addTo(map_5afec7bb8ffb416993b932c286c43a4b);\n",
-       "        \n",
-       "    \n",
-       "            var marker_cluster_0eec4a52861f43375e41c224bb7049a5 = L.markerClusterGroup(\n",
-       "                {}\n",
-       "            );\n",
-       "            map_5afec7bb8ffb416993b932c286c43a4b.addLayer(marker_cluster_0eec4a52861f43375e41c224bb7049a5);\n",
-       "        \n",
-       "    \n",
-       "            var marker_3c1fba68ceffb4d1581375d59c97f8d8 = L.marker(\n",
-       "                [40.3808, -74.4079],\n",
-       "                {}\n",
-       "            ).addTo(marker_cluster_0eec4a52861f43375e41c224bb7049a5);\n",
-       "        \n",
-       "    \n",
-       "            var icon_5b505135669d8f3ef23041d87fc0e5c9 = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;red&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_3c1fba68ceffb4d1581375d59c97f8d8.setIcon(icon_5b505135669d8f3ef23041d87fc0e5c9);\n",
-       "        \n",
-       "    \n",
-       "        var popup_8d2e8f324c7e8a39448ee4d67ffbd29e = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_192ebcd38ad5d5e77cda279396e045e0 = $(`&lt;div id=&quot;html_192ebcd38ad5d5e77cda279396e045e0&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px;&quot;&gt;         &lt;b&gt;Outcalt Hominy Mill&lt;/b&gt;&lt;br&gt;         &lt;img src=&#x27;https://github.com/MikeHistory/map2.0/blob/main/IMG_2638.JPG?raw=true&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         Founded by Judge John Outcalt on the site of Weequahala&#x27;s old dam. Passed to son J.D. Outcalt and grandson John Outcalt. The height of John Outcalt&#x27;s dam was the subject of a legal case that went all the way to the State Supreme Court.&lt;br&gt;&lt;br&gt;         &lt;i&gt;Time Period: 1800-1900&lt;/i&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_8d2e8f324c7e8a39448ee4d67ffbd29e.setContent(html_192ebcd38ad5d5e77cda279396e045e0);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_3c1fba68ceffb4d1581375d59c97f8d8.bindPopup(popup_8d2e8f324c7e8a39448ee4d67ffbd29e)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var marker_145e75eeee0c45d2e90a6696ede7be1c = L.marker(\n",
-       "                [40.3738, -74.4164],\n",
-       "                {}\n",
-       "            ).addTo(marker_cluster_0eec4a52861f43375e41c224bb7049a5);\n",
-       "        \n",
-       "    \n",
-       "            var icon_1848a7d28b5ca1ce1c2def5eb2dbbd5e = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;green&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_145e75eeee0c45d2e90a6696ede7be1c.setIcon(icon_1848a7d28b5ca1ce1c2def5eb2dbbd5e);\n",
-       "        \n",
-       "    \n",
-       "        var popup_2457700b94c4964f39b6174296e056f6 = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_7d04f1af14485bff70696270a2fa240f = $(`&lt;div id=&quot;html_7d04f1af14485bff70696270a2fa240f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px;&quot;&gt;         &lt;b&gt;Ten Eyk&#x27;s Old Forge&lt;/b&gt;&lt;br&gt;         &lt;img src=&#x27;https://example.com/image7.jpg&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         Ten Eyks Forge, Old Forge Road&#x27;s namesake.&lt;br&gt;&lt;br&gt;         &lt;i&gt;Time Period: 1700-1800&lt;/i&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_2457700b94c4964f39b6174296e056f6.setContent(html_7d04f1af14485bff70696270a2fa240f);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_145e75eeee0c45d2e90a6696ede7be1c.bindPopup(popup_2457700b94c4964f39b6174296e056f6)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var marker_79418b8c8274096a869f20a3615e7064 = L.marker(\n",
-       "                [40.3909, -74.3892],\n",
-       "                {}\n",
-       "            ).addTo(marker_cluster_0eec4a52861f43375e41c224bb7049a5);\n",
-       "        \n",
-       "    \n",
-       "            var icon_53e8d6c3cafdddb5eec18cadbaf2c1d3 = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;green&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_79418b8c8274096a869f20a3615e7064.setIcon(icon_53e8d6c3cafdddb5eec18cadbaf2c1d3);\n",
-       "        \n",
-       "    \n",
-       "        var popup_05cb49f1d23f2e05ae186ad1220eee5e = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_d9bc1adf37ff65f48a36c8f6378cc0bd = $(`&lt;div id=&quot;html_d9bc1adf37ff65f48a36c8f6378cc0bd&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px;&quot;&gt;         &lt;b&gt;St. Peter&#x27;s Church&lt;/b&gt;&lt;br&gt;         &lt;img src=&#x27;https://example.com/image8.jpg&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         First church in town, records date back to 1740&#x27;s&lt;br&gt;&lt;br&gt;         &lt;i&gt;Time Period: 1700-1800&lt;/i&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_05cb49f1d23f2e05ae186ad1220eee5e.setContent(html_d9bc1adf37ff65f48a36c8f6378cc0bd);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_79418b8c8274096a869f20a3615e7064.bindPopup(popup_05cb49f1d23f2e05ae186ad1220eee5e)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "&lt;/script&gt;\n",
-       "&lt;/html&gt;\" style=\"position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;\" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>"
-      ],
-      "text/plain": [
-       "<folium.folium.Map at 0x104407650>"
-      ]
-     },
-     "execution_count": 4,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "import folium\n",
-    "from folium.plugins import MarkerCluster\n",
-    "\n",
-    "# map starting point \n",
-    "m = folium.Map(location=(40.3839, -74.3982), zoom_start=12)\n",
-    "\n",
-    "# historic sites listing\n",
-    "historical_sites = [\n",
-    "    {\n",
-    "        'name': \"Outcalt Hominy Mill\",\n",
-    "        'coords': (40.3808, -74.4079),\n",
-    "        'description': \"Founded by Judge John Outcalt on the site of Weequahala's old dam. Passed to son J.D. Outcalt and grandson John Outcalt. The height of John Outcalt's dam was the subject of a legal case that went all the way to the State Supreme Court.\",\n",
-    "        'time_period': '1800-1900',\n",
-    "        'image_url': \"https://github.com/MikeHistory/map2.0/blob/main/IMG_2638.JPG?raw=true\"\n",
-    "    },\n",
-    "       {\n",
-    "        'name': \"Ten Eyk's Old Forge\",\n",
-    "        'coords': (40.3738, -74.4164),\n",
-    "        'description': \"Ten Eyks Forge, Old Forge Road's namesake.\",\n",
-    "        'time_period': '1700-1800',\n",
-    "        'image_url': \"https://example.com/image7.jpg\"\n",
-    "    },\n",
-    "    {\n",
-    "        'name': \"St. Peter's Church\",\n",
-    "        'coords': (40.3909, -74.3892),\n",
-    "        'description': \"First church in town, records date back to 1740's\",\n",
-    "        'time_period': '1700-1800',\n",
-    "        'image_url': \"images/St._Peters_Church_Spotswood.jpg\"\n",
-    "    }\n",
-    "]\n",
-    "\n",
-    "\n",
-    "# Define colors for time periods\n",
-    "period_colors = {'1700-1800': 'green', '1800-1900': 'red', '1900-2000': 'blue'}\n",
-    "\n",
-    "# Create a marker cluster\n",
-    "marker_cluster = MarkerCluster().add_to(m)\n",
-    "\n",
-    "# add markers to the map\n",
-    "for site in historical_sites:\n",
-    "    image_html = f\"<img src='{site['image_url']}' width='200px'><br>\" if 'image_url' in site and site['image_url'] else\"\"\n",
-    "    popup_html = f\"\"\"\n",
-    "    <div style=\"font-family:Arial; font-size:12px;\">\n",
-    "        <b>{site['name']}</b><br>\n",
-    "        {image_html}\n",
-    "        {site['description']}<br><br>\n",
-    "        <i>Time Period: {site['time_period']}</i>\n",
-    "    </div>\n",
-    "    \"\"\"\n",
-    "    \n",
-    "    popup = folium.Popup(popup_html, max_width=250)\n",
-    "    \n",
-    "    # add marker to cluster\n",
-    "    \n",
-    "    folium.Marker(\n",
-    "        location=site['coords'],\n",
-    "        popup=popup,\n",
-    "        icon=folium.Icon(color=period_colors[site['time_period']])\n",
-    "    ).add_to(marker_cluster)\n",
-    "        \n",
-    "# map title\n",
-    "title_html = '''\n",
-    "    <h3 align=\"center\" style =\"font-family:Arial; color:black; margin-top: 20px;\">\n",
-    "        Hidden Histories of Spotswood\n",
-    "    </h3>\n",
-    "'''\n",
-    "m.get_root().html.add_child(folium.Element(title_html))\n",
-    "\n",
-    "#save\n",
-    "m.save(\"hhos.html\")\n",
-    "\n",
-    "#run\n",
-    "m"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "id": "294017b0",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div style=\"width:100%;\"><div style=\"position:relative;width:100%;height:0;padding-bottom:60%;\"><span style=\"color:#565656\">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc=\"&lt;!DOCTYPE html&gt;\n",
-       "&lt;html&gt;\n",
-       "&lt;head&gt;\n",
-       "    \n",
-       "    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;\n",
-       "    \n",
-       "        &lt;script&gt;\n",
-       "            L_NO_TOUCH = false;\n",
-       "            L_DISABLE_3D = false;\n",
-       "        &lt;/script&gt;\n",
-       "    \n",
-       "    &lt;style&gt;html, body {width: 100%;height: 100%;margin: 0;padding: 0;}&lt;/style&gt;\n",
-       "    &lt;style&gt;#map {position:absolute;top:0;bottom:0;right:0;left:0;}&lt;/style&gt;\n",
-       "    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;script src=&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;\n",
-       "    \n",
-       "            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,\n",
-       "                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;\n",
-       "            &lt;style&gt;\n",
-       "                #map_088b6388ce9a3e0c7e54641d34e497e9 {\n",
-       "                    position: relative;\n",
-       "                    width: 100.0%;\n",
-       "                    height: 100.0%;\n",
-       "                    left: 0.0%;\n",
-       "                    top: 0.0%;\n",
-       "                }\n",
-       "                .leaflet-container { font-size: 1rem; }\n",
-       "            &lt;/style&gt;\n",
-       "        \n",
-       "&lt;/head&gt;\n",
-       "&lt;body&gt;\n",
-       "    \n",
-       "    \n",
-       "&lt;div style=&quot;position: fixed; bottom: 50px; left: 50px; z-index:9999; font-size:14px; background-color:white; padding: 10px; border:2px solid grey;&quot;&gt;\n",
-       "    &lt;b&gt;Time Periods&lt;/b&gt;&lt;br&gt;\n",
-       "&lt;i class=&quot;fa fa-circle&quot; style=&quot;color:green&quot;&gt;&lt;/i&gt; 1700-1800&lt;br&gt;&lt;i class=&quot;fa fa-circle&quot; style=&quot;color:red&quot;&gt;&lt;/i&gt; 1800-1900&lt;br&gt;&lt;i class=&quot;fa fa-circle&quot; style=&quot;color:blue&quot;&gt;&lt;/i&gt; 1900-2000&lt;br&gt;&lt;/div&gt;\n",
-       "    \n",
-       "    &lt;h3 align=&quot;center&quot; style=&quot;font-family:Arial; color:black; margin-top: 20px;&quot;&gt;\n",
-       "        Hidden Histories of Spotswood\n",
-       "    &lt;/h3&gt;\n",
-       "    \n",
-       "            &lt;div class=&quot;folium-map&quot; id=&quot;map_088b6388ce9a3e0c7e54641d34e497e9&quot; &gt;&lt;/div&gt;\n",
-       "        \n",
-       "&lt;/body&gt;\n",
-       "&lt;script&gt;\n",
-       "    \n",
-       "    \n",
-       "            var map_088b6388ce9a3e0c7e54641d34e497e9 = L.map(\n",
-       "                &quot;map_088b6388ce9a3e0c7e54641d34e497e9&quot;,\n",
-       "                {\n",
-       "                    center: [40.3839, -74.3982],\n",
-       "                    crs: L.CRS.EPSG3857,\n",
-       "                    zoom: 12,\n",
-       "                    zoomControl: true,\n",
-       "                    preferCanvas: false,\n",
-       "                }\n",
-       "            );\n",
-       "\n",
-       "            \n",
-       "\n",
-       "        \n",
-       "    \n",
-       "            var tile_layer_49cdc4cbea0310430b28f790cb32ef78 = L.tileLayer(\n",
-       "                &quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,\n",
-       "                {&quot;attribution&quot;: &quot;Data by \\u0026copy; \\u003ca target=\\&quot;_blank\\&quot; href=\\&quot;http://openstreetmap.org\\&quot;\\u003eOpenStreetMap\\u003c/a\\u003e, under \\u003ca target=\\&quot;_blank\\&quot; href=\\&quot;http://www.openstreetmap.org/copyright\\&quot;\\u003eODbL\\u003c/a\\u003e.&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}\n",
-       "            ).addTo(map_088b6388ce9a3e0c7e54641d34e497e9);\n",
-       "        \n",
-       "    \n",
-       "            var feature_group_b170e669835dc5b9bfb0e082ffa600c7 = L.featureGroup(\n",
-       "                {}\n",
-       "            ).addTo(map_088b6388ce9a3e0c7e54641d34e497e9);\n",
-       "        \n",
-       "    \n",
-       "            var marker_4b3687fdbba937bb91f3783ad39e4ca7 = L.marker(\n",
-       "                [40.3738, -74.4164],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_b170e669835dc5b9bfb0e082ffa600c7);\n",
-       "        \n",
-       "    \n",
-       "            var icon_677fae3612069300391d91faf584b378 = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;green&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_4b3687fdbba937bb91f3783ad39e4ca7.setIcon(icon_677fae3612069300391d91faf584b378);\n",
-       "        \n",
-       "    \n",
-       "        var popup_9294d8dfd41e0c2cec834611b31db43a = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_0bce0de8d3362170bac4226c0579b8ea = $(`&lt;div id=&quot;html_0bce0de8d3362170bac4226c0579b8ea&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px;&quot;&gt;         &lt;b&gt;Ten Eyk&#x27;s Old Forge&lt;/b&gt;&lt;br&gt;         &lt;img src=&#x27;https://example.com/image7.jpg&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         Ten Eyks Forge, Old Forge Road&#x27;s namesake.&lt;br&gt;&lt;br&gt;         &lt;i&gt;Time Period: 1700-1800&lt;/i&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_9294d8dfd41e0c2cec834611b31db43a.setContent(html_0bce0de8d3362170bac4226c0579b8ea);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_4b3687fdbba937bb91f3783ad39e4ca7.bindPopup(popup_9294d8dfd41e0c2cec834611b31db43a)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var marker_a206f2cec79ec815d23157d23c26a869 = L.marker(\n",
-       "                [40.3909, -74.3892],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_b170e669835dc5b9bfb0e082ffa600c7);\n",
-       "        \n",
-       "    \n",
-       "            var icon_3e676470f4c38af68bf91a9b27488dfa = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;green&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_a206f2cec79ec815d23157d23c26a869.setIcon(icon_3e676470f4c38af68bf91a9b27488dfa);\n",
-       "        \n",
-       "    \n",
-       "        var popup_3962ce9b6300eff0a5961b2db4a1502b = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_3c03a74b55a528e5213f267a74103752 = $(`&lt;div id=&quot;html_3c03a74b55a528e5213f267a74103752&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px;&quot;&gt;         &lt;b&gt;St. Peter&#x27;s Church&lt;/b&gt;&lt;br&gt;         &lt;img src=&#x27;https://example.com/image8.jpg&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         First church in town, records date back to 1740&#x27;s&lt;br&gt;&lt;br&gt;         &lt;i&gt;Time Period: 1700-1800&lt;/i&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_3962ce9b6300eff0a5961b2db4a1502b.setContent(html_3c03a74b55a528e5213f267a74103752);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_a206f2cec79ec815d23157d23c26a869.bindPopup(popup_3962ce9b6300eff0a5961b2db4a1502b)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var feature_group_4dc09fae0d6daaa0705d56f4ffddd595 = L.featureGroup(\n",
-       "                {}\n",
-       "            ).addTo(map_088b6388ce9a3e0c7e54641d34e497e9);\n",
-       "        \n",
-       "    \n",
-       "            var marker_6756e7c1daae615d1c73c438962a17f0 = L.marker(\n",
-       "                [40.3808, -74.4079],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_4dc09fae0d6daaa0705d56f4ffddd595);\n",
-       "        \n",
-       "    \n",
-       "            var icon_941398d8633b75bfa8bfbeed789739de = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;red&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_6756e7c1daae615d1c73c438962a17f0.setIcon(icon_941398d8633b75bfa8bfbeed789739de);\n",
-       "        \n",
-       "    \n",
-       "        var popup_a75c367448be3e25bd83b41565464803 = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_f7dcc858f5ae45110f4ab7f2e8a3d426 = $(`&lt;div id=&quot;html_f7dcc858f5ae45110f4ab7f2e8a3d426&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px;&quot;&gt;         &lt;b&gt;Outcalt Hominy Mill&lt;/b&gt;&lt;br&gt;         &lt;img src=&#x27;https://github.com/MikeHistory/map2.0/blob/main/IMG_2638.JPG?raw=true&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         Founded by Judge John Outcalt on the site of Weequahala&#x27;s old dam. Passed to son J.D. Outcalt and grandson John Outcalt. The height of John Outcalt&#x27;s dam was the subject of a legal case that went all the way to the State Supreme Court.&lt;br&gt;&lt;br&gt;         &lt;i&gt;Time Period: 1800-1900&lt;/i&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_a75c367448be3e25bd83b41565464803.setContent(html_f7dcc858f5ae45110f4ab7f2e8a3d426);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_6756e7c1daae615d1c73c438962a17f0.bindPopup(popup_a75c367448be3e25bd83b41565464803)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var layer_control_5fea758d675f68a0bfb9dfd471c6d292 = {\n",
-       "                base_layers : {\n",
-       "                    &quot;openstreetmap&quot; : tile_layer_49cdc4cbea0310430b28f790cb32ef78,\n",
-       "                },\n",
-       "                overlays :  {\n",
-       "                    &quot;1700-1800&quot; : feature_group_b170e669835dc5b9bfb0e082ffa600c7,\n",
-       "                    &quot;1800-1900&quot; : feature_group_4dc09fae0d6daaa0705d56f4ffddd595,\n",
-       "                },\n",
-       "            };\n",
-       "            L.control.layers(\n",
-       "                layer_control_5fea758d675f68a0bfb9dfd471c6d292.base_layers,\n",
-       "                layer_control_5fea758d675f68a0bfb9dfd471c6d292.overlays,\n",
-       "                {&quot;autoZIndex&quot;: true, &quot;collapsed&quot;: true, &quot;position&quot;: &quot;topright&quot;}\n",
-       "            ).addTo(map_088b6388ce9a3e0c7e54641d34e497e9);\n",
-       "        \n",
-       "&lt;/script&gt;\n",
-       "&lt;/html&gt;\" style=\"position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;\" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>"
-      ],
-      "text/plain": [
-       "<folium.folium.Map at 0x1057eba10>"
-      ]
-     },
-     "execution_count": 8,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "import folium\n",
-    "from folium.plugins import MarkerCluster\n",
-    "from folium import FeatureGroup, LayerControl\n",
-    "\n",
-    "# Map starting point \n",
-    "m = folium.Map(location=[40.3839, -74.3982], zoom_start=12)\n",
-    "\n",
-    "# Historic sites listing\n",
-    "historical_sites = [\n",
-    "    {\n",
-    "        'name': \"Outcalt Hominy Mill\",\n",
-    "        'coords': [40.3808, -74.4079],\n",
-    "        'description': \"Founded by Judge John Outcalt on the site of Weequahala's old dam. Passed to son J.D. Outcalt and grandson John Outcalt. The height of John Outcalt's dam was the subject of a legal case that went all the way to the State Supreme Court.\",\n",
-    "        'time_period': '1800-1900',\n",
-    "        'image_url': \"https://github.com/MikeHistory/map2.0/blob/main/IMG_2638.JPG?raw=true\"\n",
-    "    },\n",
-    "    {\n",
-    "        'name': \"Ten Eyk's Old Forge\",\n",
-    "        'coords': [40.3738, -74.4164],\n",
-    "        'description': \"Ten Eyks Forge, Old Forge Road's namesake.\",\n",
-    "        'time_period': '1700-1800',\n",
-    "        'image_url': \"https://example.com/image7.jpg\"\n",
-    "    },\n",
-    "    {\n",
-    "        'name': \"St. Peter's Church\",\n",
-    "        'coords': [40.3909, -74.3892],\n",
-    "        'description': \"First church in town, records date back to 1740's\",\n",
-    "        'time_period': '1700-1800',\n",
-    "        'image_url': \"https://example.com/image8.jpg\"\n",
-    "    }\n",
-    "]\n",
-    "\n",
-    "# Define colors for time periods\n",
-    "period_colors = {'1700-1800': 'green', '1800-1900': 'red', '1900-2000': 'blue'}\n",
-    "\n",
-    "# Create feature groups for each time period\n",
-    "time_periods = sorted(set(site['time_period'] for site in historical_sites))  # Unique time periods\n",
-    "period_layers = {period: FeatureGroup(name=period, show=True) for period in time_periods}\n",
-    "\n",
-    "# Add markers to the appropriate layer\n",
-    "for site in historical_sites:\n",
-    "    image_html = f\"<img src='{site['image_url']}' width='200px'><br>\" if 'image_url' in site and site['image_url'] else \"\"\n",
-    "    popup_html = f\"\"\"\n",
-    "    <div style=\"font-family:Arial; font-size:12px;\">\n",
-    "        <b>{site['name']}</b><br>\n",
-    "        {image_html}\n",
-    "        {site['description']}<br><br>\n",
-    "        <i>Time Period: {site['time_period']}</i>\n",
-    "    </div>\n",
-    "    \"\"\"\n",
-    "    \n",
-    "    popup = folium.Popup(popup_html, max_width=250)\n",
-    "    \n",
-    "    # Add marker to the correct time period layer\n",
-    "    folium.Marker(\n",
-    "        location=site['coords'],\n",
-    "        popup=popup,\n",
-    "        icon=folium.Icon(color=period_colors[site['time_period']])\n",
-    "    ).add_to(period_layers[site['time_period']])\n",
-    "\n",
-    "# Add all layers to the map\n",
-    "for layer in period_layers.values():\n",
-    "    layer.add_to(m)\n",
-    "\n",
-    "# Add layer control to toggle time periods\n",
-    "LayerControl().add_to(m)\n",
-    "\n",
-    "# Add a custom legend\n",
-    "legend_html = '''\n",
-    "<div style=\"position: fixed; bottom: 50px; left: 50px; z-index:9999; font-size:14px; background-color:white; padding: 10px; border:2px solid grey;\">\n",
-    "    <b>Time Periods</b><br>\n",
-    "'''\n",
-    "for period, color in period_colors.items():\n",
-    "    legend_html += f'<i class=\"fa fa-circle\" style=\"color:{color}\"></i> {period}<br>'\n",
-    "legend_html += '</div>'\n",
-    "\n",
-    "m.get_root().html.add_child(folium.Element(legend_html))\n",
-    "\n",
-    "# Map title\n",
-    "title_html = '''\n",
-    "    <h3 align=\"center\" style=\"font-family:Arial; color:black; margin-top: 20px;\">\n",
-    "        Hidden Histories of Spotswood\n",
-    "    </h3>\n",
-    "'''\n",
-    "m.get_root().html.add_child(folium.Element(title_html))\n",
-    "\n",
-    "# Save and display\n",
-    "m.save(\"hhos.html\")\n",
-    "m"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 19,
-   "id": "684c3728",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div style=\"width:100%;\"><div style=\"position:relative;width:100%;height:0;padding-bottom:60%;\"><span style=\"color:#565656\">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc=\"&lt;!DOCTYPE html&gt;\n",
-       "&lt;html&gt;\n",
-       "&lt;head&gt;\n",
-       "    \n",
-       "    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;\n",
-       "    \n",
-       "        &lt;script&gt;\n",
-       "            L_NO_TOUCH = false;\n",
-       "            L_DISABLE_3D = false;\n",
-       "        &lt;/script&gt;\n",
-       "    \n",
-       "    &lt;style&gt;html, body {width: 100%;height: 100%;margin: 0;padding: 0;}&lt;/style&gt;\n",
-       "    &lt;style&gt;#map {position:absolute;top:0;bottom:0;right:0;left:0;}&lt;/style&gt;\n",
-       "    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;script src=&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;\n",
-       "    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;\n",
-       "    \n",
-       "            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,\n",
-       "                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;\n",
-       "            &lt;style&gt;\n",
-       "                #map_664a8230a553509c88e0d186660cd7e5 {\n",
-       "                    position: relative;\n",
-       "                    width: 100.0%;\n",
-       "                    height: 100.0%;\n",
-       "                    left: 0.0%;\n",
-       "                    top: 0.0%;\n",
-       "                }\n",
-       "                .leaflet-container { font-size: 1rem; }\n",
-       "            &lt;/style&gt;\n",
-       "        \n",
-       "&lt;/head&gt;\n",
-       "&lt;body&gt;\n",
-       "    \n",
-       "    \n",
-       "&lt;div style=&quot;\n",
-       "    position: fixed;\n",
-       "    bottom: 50px;\n",
-       "    left: 50px;\n",
-       "    z-index:9999;\n",
-       "    background-color:white;\n",
-       "    padding:10px;\n",
-       "    border:2px solid #aaa;\n",
-       "    border-radius: 5px;&quot;&gt;\n",
-       "    &lt;b&gt;Time Periods&lt;/b&gt;&lt;br&gt;\n",
-       "    &lt;span style=&quot;color:green&quot;&gt;●&lt;/span&gt; 1700-1800&lt;br&gt;\n",
-       "    &lt;span style=&quot;color:red&quot;&gt;●&lt;/span&gt; 1800-1900&lt;br&gt;\n",
-       "    &lt;span style=&quot;color:blue&quot;&gt;●&lt;/span&gt; 1900-2000&lt;br&gt;\n",
-       "&lt;/div&gt;\n",
-       "    \n",
-       "    &lt;h3 align=&quot;center&quot; style=&quot;font-family:Arial; color:black; margin-top: 20px;&quot;&gt;\n",
-       "        Hidden Histories of Spotswood\n",
-       "    &lt;/h3&gt;\n",
-       "    \n",
-       "            &lt;div class=&quot;folium-map&quot; id=&quot;map_664a8230a553509c88e0d186660cd7e5&quot; &gt;&lt;/div&gt;\n",
-       "        \n",
-       "&lt;/body&gt;\n",
-       "&lt;script&gt;\n",
-       "    \n",
-       "    \n",
-       "            var map_664a8230a553509c88e0d186660cd7e5 = L.map(\n",
-       "                &quot;map_664a8230a553509c88e0d186660cd7e5&quot;,\n",
-       "                {\n",
-       "                    center: [40.3839, -74.3982],\n",
-       "                    crs: L.CRS.EPSG3857,\n",
-       "                    zoom: 12,\n",
-       "                    zoomControl: true,\n",
-       "                    preferCanvas: false,\n",
-       "                }\n",
-       "            );\n",
-       "\n",
-       "            \n",
-       "\n",
-       "        \n",
-       "    \n",
-       "            var tile_layer_c1b38804079ddd8854cd7e305956684d = L.tileLayer(\n",
-       "                &quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,\n",
-       "                {&quot;attribution&quot;: &quot;Data by \\u0026copy; \\u003ca target=\\&quot;_blank\\&quot; href=\\&quot;http://openstreetmap.org\\&quot;\\u003eOpenStreetMap\\u003c/a\\u003e, under \\u003ca target=\\&quot;_blank\\&quot; href=\\&quot;http://www.openstreetmap.org/copyright\\&quot;\\u003eODbL\\u003c/a\\u003e.&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}\n",
-       "            ).addTo(map_664a8230a553509c88e0d186660cd7e5);\n",
-       "        \n",
-       "    \n",
-       "            var feature_group_f7f6e021fa8dddd3a119b389754da0d9 = L.featureGroup(\n",
-       "                {}\n",
-       "            ).addTo(map_664a8230a553509c88e0d186660cd7e5);\n",
-       "        \n",
-       "    \n",
-       "            var marker_e9de303054c4092c4556ae0d8f5b78ba = L.marker(\n",
-       "                [40.414234829578284, -74.3661219204212],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_f7f6e021fa8dddd3a119b389754da0d9);\n",
-       "        \n",
-       "    \n",
-       "            var icon_68ac2904a6d9d81ffc36eb01128332e2 = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;green&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_e9de303054c4092c4556ae0d8f5b78ba.setIcon(icon_68ac2904a6d9d81ffc36eb01128332e2);\n",
-       "        \n",
-       "    \n",
-       "        var popup_892ce9380fcb3fa765a235fe1df08a9f = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_19f4bf93c17f2042e307a929e443ae3d = $(`&lt;div id=&quot;html_19f4bf93c17f2042e307a929e443ae3d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px; line-height:1.4;&quot;&gt;         &lt;h4 style=&quot;margin:5px 0;&quot;&gt;Leonard&#x27;s Tavern&lt;/h4&gt;         &lt;img src=&#x27;images/images/village_deli.jpeg&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         &lt;p&gt;Tavern operated by Captain John Leonard at the first crossing of the South River. Founded in the 1720&#x27;s, this would be where Weequahala murdered Captain Leonard. It still operates today as the Village Deli.&lt;/p&gt;         &lt;p&gt;&lt;i&gt;Time Period: 1700-1800&lt;/i&gt;&lt;/p&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_892ce9380fcb3fa765a235fe1df08a9f.setContent(html_19f4bf93c17f2042e307a929e443ae3d);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_e9de303054c4092c4556ae0d8f5b78ba.bindPopup(popup_892ce9380fcb3fa765a235fe1df08a9f)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var marker_d95af2ebd1775e3ddd98e318ee87ac7b = L.marker(\n",
-       "                [40.3738, -74.4164],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_f7f6e021fa8dddd3a119b389754da0d9);\n",
-       "        \n",
-       "    \n",
-       "            var icon_bc171048382aebf2bb72164bf92bae2f = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;green&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_d95af2ebd1775e3ddd98e318ee87ac7b.setIcon(icon_bc171048382aebf2bb72164bf92bae2f);\n",
-       "        \n",
-       "    \n",
-       "        var popup_466ebad2ae347c2930cffc5c65013c72 = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_cc4a2611e14d02d03547f71a8215a84f = $(`&lt;div id=&quot;html_cc4a2611e14d02d03547f71a8215a84f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px; line-height:1.4;&quot;&gt;         &lt;h4 style=&quot;margin:5px 0;&quot;&gt;Ten Eyk&#x27;s Old Forge&lt;/h4&gt;         &lt;img src=&#x27;https://example.com/image7.jpg&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         &lt;p&gt;Ten Eyks Forge, Old Forge Road&#x27;s namesake.&lt;/p&gt;         &lt;p&gt;&lt;i&gt;Time Period: 1700-1800&lt;/i&gt;&lt;/p&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_466ebad2ae347c2930cffc5c65013c72.setContent(html_cc4a2611e14d02d03547f71a8215a84f);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_d95af2ebd1775e3ddd98e318ee87ac7b.bindPopup(popup_466ebad2ae347c2930cffc5c65013c72)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var marker_9369a3d9e1361621460f8ea5c7b7be97 = L.marker(\n",
-       "                [40.3805, -74.4078],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_f7f6e021fa8dddd3a119b389754da0d9);\n",
-       "        \n",
-       "    \n",
-       "            var icon_9a5ae1f3cd9472a1fd0cf14d44e4d1a2 = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;green&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_9369a3d9e1361621460f8ea5c7b7be97.setIcon(icon_9a5ae1f3cd9472a1fd0cf14d44e4d1a2);\n",
-       "        \n",
-       "    \n",
-       "        var popup_365416780fafe3cda6b1a55fe0085d20 = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_8025a26bb2594d7cdf6c1a69279353aa = $(`&lt;div id=&quot;html_8025a26bb2594d7cdf6c1a69279353aa&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px; line-height:1.4;&quot;&gt;         &lt;h4 style=&quot;margin:5px 0;&quot;&gt;Weequahala&#x27;s Old Dam&lt;/h4&gt;         &lt;img src=&#x27;https://github.com/MikeHistory/Spotswood-History/blob/main/images/IMG_3345.jpeg?raw=true&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         &lt;p&gt;Weeqhala&#x27;s mill dam, referenced on several contemporary deeds as well as for several decades for.&lt;/p&gt;         &lt;p&gt;&lt;i&gt;Time Period: 1700-1800&lt;/i&gt;&lt;/p&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_365416780fafe3cda6b1a55fe0085d20.setContent(html_8025a26bb2594d7cdf6c1a69279353aa);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_9369a3d9e1361621460f8ea5c7b7be97.bindPopup(popup_365416780fafe3cda6b1a55fe0085d20)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var marker_4ade957554909f4e66d4003507830b2a = L.marker(\n",
-       "                [40.3909, -74.3892],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_f7f6e021fa8dddd3a119b389754da0d9);\n",
-       "        \n",
-       "    \n",
-       "            var icon_d3c05a51dd478b060aa432276a8b03f3 = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;green&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_4ade957554909f4e66d4003507830b2a.setIcon(icon_d3c05a51dd478b060aa432276a8b03f3);\n",
-       "        \n",
-       "    \n",
-       "        var popup_0446f24571d0fc5096bcdc81a0857a64 = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_d1dcbeffff29a52bd623a31e43f19fa9 = $(`&lt;div id=&quot;html_d1dcbeffff29a52bd623a31e43f19fa9&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px; line-height:1.4;&quot;&gt;         &lt;h4 style=&quot;margin:5px 0;&quot;&gt;St. Peter&#x27;s Church&lt;/h4&gt;         &lt;img src=&#x27;images/St._Peters_Church_Spotswood.jpg&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         &lt;p&gt;First church in town, records date back to 1740&#x27;s&lt;/p&gt;         &lt;p&gt;&lt;i&gt;Time Period: 1700-1800&lt;/i&gt;&lt;/p&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_0446f24571d0fc5096bcdc81a0857a64.setContent(html_d1dcbeffff29a52bd623a31e43f19fa9);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_4ade957554909f4e66d4003507830b2a.bindPopup(popup_0446f24571d0fc5096bcdc81a0857a64)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var feature_group_cae6a23eac60220ebe564c8c691cc5b1 = L.featureGroup(\n",
-       "                {}\n",
-       "            ).addTo(map_664a8230a553509c88e0d186660cd7e5);\n",
-       "        \n",
-       "    \n",
-       "            var marker_2a8cdb1dd197e9d737d44985af5f3185 = L.marker(\n",
-       "                [40.3808, -74.4079],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_cae6a23eac60220ebe564c8c691cc5b1);\n",
-       "        \n",
-       "    \n",
-       "            var icon_fb3fd0bb80f9a9996cf0b9e191308eb5 = L.AwesomeMarkers.icon(\n",
-       "                {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;red&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}\n",
-       "            );\n",
-       "            marker_2a8cdb1dd197e9d737d44985af5f3185.setIcon(icon_fb3fd0bb80f9a9996cf0b9e191308eb5);\n",
-       "        \n",
-       "    \n",
-       "        var popup_55ec855f72d990862c252cbda01cb64d = L.popup({&quot;maxWidth&quot;: 250});\n",
-       "\n",
-       "        \n",
-       "            \n",
-       "                var html_3c2e326ef337f1fb57750189d989cebe = $(`&lt;div id=&quot;html_3c2e326ef337f1fb57750189d989cebe&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;     &lt;div style=&quot;font-family:Arial; font-size:12px; line-height:1.4;&quot;&gt;         &lt;h4 style=&quot;margin:5px 0;&quot;&gt;Outcalt Hominy Mill&lt;/h4&gt;         &lt;img src=&#x27;https://github.com/MikeHistory/map2.0/blob/main/IMG_2638.JPG?raw=true&#x27; width=&#x27;200px&#x27;&gt;&lt;br&gt;         &lt;p&gt;Founded by Judge John Outcalt on the site of Weequahala&#x27;s old dam. Passed to son J.D. Outcalt and grandson John Outcalt. The height of John Outcalt&#x27;s dam was the subject of a legal case that went all the way to the State Supreme Court.&lt;/p&gt;         &lt;p&gt;&lt;i&gt;Time Period: 1800-1900&lt;/i&gt;&lt;/p&gt;     &lt;/div&gt;     &lt;/div&gt;`)[0];\n",
-       "                popup_55ec855f72d990862c252cbda01cb64d.setContent(html_3c2e326ef337f1fb57750189d989cebe);\n",
-       "            \n",
-       "        \n",
-       "\n",
-       "        marker_2a8cdb1dd197e9d737d44985af5f3185.bindPopup(popup_55ec855f72d990862c252cbda01cb64d)\n",
-       "        ;\n",
-       "\n",
-       "        \n",
-       "    \n",
-       "    \n",
-       "            var feature_group_d71bdbecbd10999ba067cf12cc3a9e47 = L.featureGroup(\n",
-       "                {}\n",
-       "            ).addTo(map_664a8230a553509c88e0d186660cd7e5);\n",
-       "        \n",
-       "    \n",
-       "            var marker_fbaa27f64d2d5a296725a1656c8c8915 = L.marker(\n",
-       "                [40.3808, -74.4079],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_d71bdbecbd10999ba067cf12cc3a9e47);\n",
-       "        \n",
-       "    \n",
-       "            var div_icon_49efe835c7894d893432261d7bee488c = L.divIcon({&quot;className&quot;: &quot;empty&quot;, &quot;html&quot;: &quot;\\n    \\u003cdiv style=\\&quot;font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\\&quot;\\u003e\\n        Outcalt Hominy Mill\\n    \\u003c/div\\u003e\\n    &quot;, &quot;iconSize&quot;: [150, 36]});\n",
-       "            marker_fbaa27f64d2d5a296725a1656c8c8915.setIcon(div_icon_49efe835c7894d893432261d7bee488c);\n",
-       "        \n",
-       "    \n",
-       "            var marker_f35fcda6a2985c431fb619ec20fb94c2 = L.marker(\n",
-       "                [40.414234829578284, -74.3661219204212],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_d71bdbecbd10999ba067cf12cc3a9e47);\n",
-       "        \n",
-       "    \n",
-       "            var div_icon_ab27d95b0241ab15a59bf4ca06b5b15a = L.divIcon({&quot;className&quot;: &quot;empty&quot;, &quot;html&quot;: &quot;\\n    \\u003cdiv style=\\&quot;font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\\&quot;\\u003e\\n        Leonard\\u0027s Tavern\\n    \\u003c/div\\u003e\\n    &quot;, &quot;iconSize&quot;: [150, 36]});\n",
-       "            marker_f35fcda6a2985c431fb619ec20fb94c2.setIcon(div_icon_ab27d95b0241ab15a59bf4ca06b5b15a);\n",
-       "        \n",
-       "    \n",
-       "            var marker_352d25f2c2f2ea3d33812a5fb9b867dd = L.marker(\n",
-       "                [40.3738, -74.4164],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_d71bdbecbd10999ba067cf12cc3a9e47);\n",
-       "        \n",
-       "    \n",
-       "            var div_icon_065b03fecc26e8f8d4f0dbd2e2489e12 = L.divIcon({&quot;className&quot;: &quot;empty&quot;, &quot;html&quot;: &quot;\\n    \\u003cdiv style=\\&quot;font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\\&quot;\\u003e\\n        Ten Eyk\\u0027s Old Forge\\n    \\u003c/div\\u003e\\n    &quot;, &quot;iconSize&quot;: [150, 36]});\n",
-       "            marker_352d25f2c2f2ea3d33812a5fb9b867dd.setIcon(div_icon_065b03fecc26e8f8d4f0dbd2e2489e12);\n",
-       "        \n",
-       "    \n",
-       "            var marker_f331f6102f23cc7b45ff001acd37f1bb = L.marker(\n",
-       "                [40.3805, -74.4078],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_d71bdbecbd10999ba067cf12cc3a9e47);\n",
-       "        \n",
-       "    \n",
-       "            var div_icon_92144aebf9939e03d29160845a2175d8 = L.divIcon({&quot;className&quot;: &quot;empty&quot;, &quot;html&quot;: &quot;\\n    \\u003cdiv style=\\&quot;font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\\&quot;\\u003e\\n        Weequahala\\u0027s Old Dam\\n    \\u003c/div\\u003e\\n    &quot;, &quot;iconSize&quot;: [150, 36]});\n",
-       "            marker_f331f6102f23cc7b45ff001acd37f1bb.setIcon(div_icon_92144aebf9939e03d29160845a2175d8);\n",
-       "        \n",
-       "    \n",
-       "            var marker_5ce75baa93738be69b936ea8f384d028 = L.marker(\n",
-       "                [40.3909, -74.3892],\n",
-       "                {}\n",
-       "            ).addTo(feature_group_d71bdbecbd10999ba067cf12cc3a9e47);\n",
-       "        \n",
-       "    \n",
-       "            var div_icon_83fc4ee8c3fcd6c7cbcf4c1e86351633 = L.divIcon({&quot;className&quot;: &quot;empty&quot;, &quot;html&quot;: &quot;\\n    \\u003cdiv style=\\&quot;font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\\&quot;\\u003e\\n        St. Peter\\u0027s Church\\n    \\u003c/div\\u003e\\n    &quot;, &quot;iconSize&quot;: [150, 36]});\n",
-       "            marker_5ce75baa93738be69b936ea8f384d028.setIcon(div_icon_83fc4ee8c3fcd6c7cbcf4c1e86351633);\n",
-       "        \n",
-       "    \n",
-       "            var layer_control_e2a0f8d12d118a0863498a6206a07cf2 = {\n",
-       "                base_layers : {\n",
-       "                    &quot;openstreetmap&quot; : tile_layer_c1b38804079ddd8854cd7e305956684d,\n",
-       "                },\n",
-       "                overlays :  {\n",
-       "                    &quot;1700-1800&quot; : feature_group_f7f6e021fa8dddd3a119b389754da0d9,\n",
-       "                    &quot;1800-1900&quot; : feature_group_cae6a23eac60220ebe564c8c691cc5b1,\n",
-       "                    &quot;Location Labels&quot; : feature_group_d71bdbecbd10999ba067cf12cc3a9e47,\n",
-       "                },\n",
-       "            };\n",
-       "            L.control.layers(\n",
-       "                layer_control_e2a0f8d12d118a0863498a6206a07cf2.base_layers,\n",
-       "                layer_control_e2a0f8d12d118a0863498a6206a07cf2.overlays,\n",
-       "                {&quot;autoZIndex&quot;: true, &quot;collapsed&quot;: true, &quot;position&quot;: &quot;topright&quot;}\n",
-       "            ).addTo(map_664a8230a553509c88e0d186660cd7e5);\n",
-       "        \n",
-       "&lt;/script&gt;\n",
-       "&lt;/html&gt;\" style=\"position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;\" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>"
-      ],
-      "text/plain": [
-       "<folium.folium.Map at 0x11f966f90>"
-      ]
-     },
-     "execution_count": 19,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "import folium\n",
-    "from folium.plugins import MarkerCluster\n",
-    "from folium import FeatureGroup, LayerControl\n",
-    "\n",
-    "# Map starting point \n",
-    "m = folium.Map(location=[40.3839, -74.3982], zoom_start=12)\n",
-    "\n",
-    "# Historic sites listing\n",
-    "historical_sites = [\n",
-    "    {\n",
-    "        'name': \"Outcalt Hominy Mill\",\n",
-    "        'coords': [40.3808, -74.4079],\n",
-    "        'description': \"Founded by Judge John Outcalt on the site of Weequahala's old dam. Passed to son J.D. Outcalt and grandson John Outcalt. The height of John Outcalt's dam was the subject of a legal case that went all the way to the State Supreme Court.\",\n",
-    "        'time_period': '1800-1900',\n",
-    "        'image_url': \"https://github.com/MikeHistory/map2.0/blob/main/IMG_2638.JPG?raw=true\"\n",
-    "    },\n",
-    "    {\n",
-    "        'name': \"Leonard's Tavern\",\n",
-    "        'coords': [40.414234829578284, -74.3661219204212],\n",
-    "        'description': \"Tavern operated by Captain John Leonard at the first crossing of the South River. Founded in the 1720's, this would be where Weequahala murdered Captain Leonard. It still operates today as the Village Deli.\",\n",
-    "        'time_period': '1700-1800',\n",
-    "        'image_url': 'images/images/village_deli.jpeg'\n",
-    "    },\n",
-    "    {\n",
-    "        'name': \"Ten Eyk's Old Forge\",\n",
-    "        'coords': [40.3738, -74.4164],\n",
-    "        'description': \"Ten Eyks Forge, Old Forge Road's namesake.\",\n",
-    "        'time_period': '1700-1800',\n",
-    "        'image_url': \"https://example.com/image7.jpg\"\n",
-    "    },\n",
-    "        {\n",
-    "        'name': \"Weequahala's Old Dam\",\n",
-    "        'coords': (40.3805, -74.4078),\n",
-    "        'description': \"Weeqhala's mill dam, referenced on several contemporary deeds as well as for several decades for.\",\n",
-    "        'time_period': '1700-1800',\n",
-    "        'image_url': \"https://github.com/MikeHistory/Spotswood-History/blob/main/images/IMG_3345.jpeg?raw=true\"\n",
-    "    },\n",
-    "    {\n",
-    "        'name': \"St. Peter's Church\",\n",
-    "        'coords': [40.3909, -74.3892],\n",
-    "        'description': \"First church in town, records date back to 1740's\",\n",
-    "        'time_period': '1700-1800',\n",
-    "        'image_url': 'images/St._Peters_Church_Spotswood.jpg'\n",
-    "    }\n",
-    "]\n",
-    "\n",
-    "# Define colors for time periods\n",
-    "period_colors = {'1700-1800': 'green', '1800-1900': 'red', '1900-2000': 'blue'}\n",
-    "\n",
-    "# Create feature groups for each time period and labels\n",
-    "time_periods = sorted(set(site['time_period'] for site in historical_sites))  # Unique time periods\n",
-    "period_layers = {period: FeatureGroup(name=period, show=True) for period in time_periods}\n",
-    "labels_layer = FeatureGroup(name=\"Location Labels\", show=True)  # Layer for labels\n",
-    "\n",
-    "# Add markers and labels to the map\n",
-    "for site in historical_sites:\n",
-    "    # Popup for markers\n",
-    "    image_html = f\"<img src='{site['image_url']}' width='200px'><br>\" if 'image_url' in site and site['image_url'] else \"\"\n",
-    "    popup_html = f\"\"\"\n",
-    "    <div style=\"font-family:Arial; font-size:12px; line-height:1.4;\">\n",
-    "        <h4 style=\"margin:5px 0;\">{site['name']}</h4>\n",
-    "        {image_html}\n",
-    "        <p>{site['description']}</p>\n",
-    "        <p><i>Time Period: {site['time_period']}</i></p>\n",
-    "    </div>\n",
-    "    \"\"\"\n",
-    "    popup = folium.Popup(popup_html, max_width=250)\n",
-    "    \n",
-    "    # Add marker to the correct time period layer\n",
-    "    folium.Marker(\n",
-    "        location=site['coords'],\n",
-    "        popup=popup,\n",
-    "        icon=folium.Icon(color=period_colors[site['time_period']])\n",
-    "    ).add_to(period_layers[site['time_period']])\n",
-    "\n",
-    "    # Add label as a separate DivIcon to the labels layer\n",
-    "    label_html = f\"\"\"\n",
-    "    <div style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\">\n",
-    "        {site['name']}\n",
-    "    </div>\n",
-    "    \"\"\"\n",
-    "    folium.Marker(\n",
-    "        location=site['coords'],\n",
-    "        icon=folium.DivIcon(html=label_html, icon_size=(150, 36))  # Adjust icon_size as needed\n",
-    "    ).add_to(labels_layer)\n",
-    "\n",
-    "# Add all layers to the map\n",
-    "for layer in period_layers.values():\n",
-    "    layer.add_to(m)\n",
-    "labels_layer.add_to(m)\n",
-    "\n",
-    "# Add layer control to toggle time periods and labels\n",
-    "LayerControl().add_to(m)\n",
-    "\n",
-    "\n",
-    "\n",
-    "for period, color in period_colors.items():\n",
-    "    legend_html += f'<i class=\"fa fa-circle\" style=\"color:{color}\"></i> {period}<br>'\n",
-    "legend_html += '</div>'\n",
-    "\n",
-    "# Add a custom legend\n",
-    "legend_html = '''\n",
-    "<div style=\"\n",
-    "    position: fixed;\n",
-    "    bottom: 50px;\n",
-    "    left: 50px;\n",
-    "    z-index:9999;\n",
-    "    background-color:white;\n",
-    "    padding:10px;\n",
-    "    border:2px solid #aaa;\n",
-    "    border-radius: 5px;\">\n",
-    "    <b>Time Periods</b><br>\n",
-    "    <span style=\"color:green\">●</span> 1700-1800<br>\n",
-    "    <span style=\"color:red\">●</span> 1800-1900<br>\n",
-    "    <span style=\"color:blue\">●</span> 1900-2000<br>\n",
-    "</div>\n",
-    "'''\n",
-    "m.get_root().html.add_child(folium.Element(legend_html))\n",
-    "\n",
-    "# Map title\n",
-    "title_html = '''\n",
-    "    <h3 align=\"center\" style=\"font-family:Arial; color:black; margin-top: 20px;\">\n",
-    "        Hidden Histories of Spotswood\n",
-    "    </h3>\n",
-    "'''\n",
-    "m.get_root().html.add_child(folium.Element(title_html))\n",
-    "\n",
-    "# Save and display\n",
-    "m.save(\"hhos.html\")\n",
-    "m"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "35896195",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.11.7"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_99207b6d7249ca46c49e4f1bfaa69e7f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    z-index:9999;
+    background-color:white;
+    padding:10px;
+    border:2px solid #aaa;
+    border-radius: 5px;">
+    <b>Time Periods</b><br>
+    <span style="color:green">●</span> 1700-1800<br>
+    <span style="color:red">●</span> 1800-1900<br>
+    <span style="color:blue">●</span> 1900-2000<br>
+</div>
+    
+    <h3 align="center" style="font-family:Arial; color:black; margin-top: 20px;">
+        Hidden Histories of Spotswood
+    </h3>
+    
+            <div class="folium-map" id="map_99207b6d7249ca46c49e4f1bfaa69e7f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_99207b6d7249ca46c49e4f1bfaa69e7f = L.map(
+                "map_99207b6d7249ca46c49e4f1bfaa69e7f",
+                {
+                    center: [40.3839, -74.3982],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8ad259165a4777afb39dd1e29455bd40 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_99207b6d7249ca46c49e4f1bfaa69e7f);
+        
+    
+            var feature_group_4fd28e64cae07d99d33ee66cc966f53f = L.featureGroup(
+                {}
+            ).addTo(map_99207b6d7249ca46c49e4f1bfaa69e7f);
+        
+    
+            var marker_4fea1cdd160ee1ddeae997b7e792995a = L.marker(
+                [40.414234829578284, -74.3661219204212],
+                {}
+            ).addTo(feature_group_4fd28e64cae07d99d33ee66cc966f53f);
+        
+    
+            var icon_b7116f489d8dbb7281ade17db74a0b06 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4fea1cdd160ee1ddeae997b7e792995a.setIcon(icon_b7116f489d8dbb7281ade17db74a0b06);
+        
+    
+        var popup_49bd4b21a265299e5f91426d4baf3dc8 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_5a520232d84b0223e06d3c5321127cf3 = $(`<div id="html_5a520232d84b0223e06d3c5321127cf3" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">         <h4 style="margin:5px 0;">Leonard's Tavern</h4>         <img src='images/images/village_deli.jpeg' width='200px'><br>         <p>Tavern operated by Captain John Leonard at the first crossing of the South River. Founded in the 1720's, this would be where Weequahala murdered Captain Leonard. It still operates today as the Village Deli.</p>         <p><i>Time Period: 1700-1800</i></p>     </div>     </div>`)[0];
+                popup_49bd4b21a265299e5f91426d4baf3dc8.setContent(html_5a520232d84b0223e06d3c5321127cf3);
+            
+        
+
+        marker_4fea1cdd160ee1ddeae997b7e792995a.bindPopup(popup_49bd4b21a265299e5f91426d4baf3dc8)
+        ;
+
+        
+    
+    
+            var marker_c4931be0657070e979772ef7a81a200e = L.marker(
+                [40.3738, -74.4164],
+                {}
+            ).addTo(feature_group_4fd28e64cae07d99d33ee66cc966f53f);
+        
+    
+            var icon_f3d0de743f7f05f979949f0d2ce29151 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c4931be0657070e979772ef7a81a200e.setIcon(icon_f3d0de743f7f05f979949f0d2ce29151);
+        
+    
+        var popup_536bc919d90fd81442d522ff2b6c4c54 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_5e4ab5314c3e5f904f7e99862f3f533f = $(`<div id="html_5e4ab5314c3e5f904f7e99862f3f533f" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">         <h4 style="margin:5px 0;">Ten Eyk's Old Forge</h4>         <img src='https://example.com/image7.jpg' width='200px'><br>         <p>Ten Eyks Forge, Old Forge Road's namesake.</p>         <p><i>Time Period: 1700-1800</i></p>     </div>     </div>`)[0];
+                popup_536bc919d90fd81442d522ff2b6c4c54.setContent(html_5e4ab5314c3e5f904f7e99862f3f533f);
+            
+        
+
+        marker_c4931be0657070e979772ef7a81a200e.bindPopup(popup_536bc919d90fd81442d522ff2b6c4c54)
+        ;
+
+        
+    
+    
+            var marker_7ac57042d3d2ab127be6026c39bc23fc = L.marker(
+                [40.3805, -74.4078],
+                {}
+            ).addTo(feature_group_4fd28e64cae07d99d33ee66cc966f53f);
+        
+    
+            var icon_39e87a0ef118d87ee6fea31682ad82a2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7ac57042d3d2ab127be6026c39bc23fc.setIcon(icon_39e87a0ef118d87ee6fea31682ad82a2);
+        
+    
+        var popup_9af8c3e0f66b5319aed4746d8ce760d0 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_a18140afc45de806a12f0019d5550fb1 = $(`<div id="html_a18140afc45de806a12f0019d5550fb1" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">         <h4 style="margin:5px 0;">Weequahala's Old Dam</h4>         <img src='https://github.com/MikeHistory/Spotswood-History/blob/main/images/IMG_3345.jpeg?raw=true' width='200px'><br>         <p>Weeqhala's mill dam, referenced on several contemporary deeds as well as for several decades for.</p>         <p><i>Time Period: 1700-1800</i></p>     </div>     </div>`)[0];
+                popup_9af8c3e0f66b5319aed4746d8ce760d0.setContent(html_a18140afc45de806a12f0019d5550fb1);
+            
+        
+
+        marker_7ac57042d3d2ab127be6026c39bc23fc.bindPopup(popup_9af8c3e0f66b5319aed4746d8ce760d0)
+        ;
+
+        
+    
+    
+            var marker_7f4822b3bbb8f404e5eea463003b07b8 = L.marker(
+                [40.3909, -74.3892],
+                {}
+            ).addTo(feature_group_4fd28e64cae07d99d33ee66cc966f53f);
+        
+    
+            var icon_dbb4b1cd78d63a2e4606d78f0b7fac58 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7f4822b3bbb8f404e5eea463003b07b8.setIcon(icon_dbb4b1cd78d63a2e4606d78f0b7fac58);
+        
+    
+        var popup_ced206b5e1d432714d4f5580878d7fa5 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_6ad3558af95dce2541ca16f04db73c8a = $(`<div id="html_6ad3558af95dce2541ca16f04db73c8a" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">         <h4 style="margin:5px 0;">St. Peter's Church</h4>         <img src='images/St._Peters_Church_Spotswood.jpg' width='200px'><br>         <p>First church in town, records date back to 1740's</p>         <p><i>Time Period: 1700-1800</i></p>     </div>     </div>`)[0];
+                popup_ced206b5e1d432714d4f5580878d7fa5.setContent(html_6ad3558af95dce2541ca16f04db73c8a);
+            
+        
+
+        marker_7f4822b3bbb8f404e5eea463003b07b8.bindPopup(popup_ced206b5e1d432714d4f5580878d7fa5)
+        ;
+
+        
+    
+    
+            var feature_group_6b5eea7e9400673c6a485742f3c7626f = L.featureGroup(
+                {}
+            ).addTo(map_99207b6d7249ca46c49e4f1bfaa69e7f);
+        
+    
+            var marker_98fb55deab7aaa4cadf99e559bf9663a = L.marker(
+                [40.3808, -74.4079],
+                {}
+            ).addTo(feature_group_6b5eea7e9400673c6a485742f3c7626f);
+        
+    
+            var icon_7a33548f33b9cd0a49adee779de239c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_98fb55deab7aaa4cadf99e559bf9663a.setIcon(icon_7a33548f33b9cd0a49adee779de239c8);
+        
+    
+        var popup_e5efd8c09f886a0a537dd70ae4b98e7f = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_f4bc1ffc996397333d250a5e0154ff98 = $(`<div id="html_f4bc1ffc996397333d250a5e0154ff98" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">         <h4 style="margin:5px 0;">Outcalt Hominy Mill</h4>         <img src='https://github.com/MikeHistory/map2.0/blob/main/IMG_2638.JPG?raw=true' width='200px'><br>         <p>Founded by Judge John Outcalt on the site of Weequahala's old dam. Passed to son J.D. Outcalt and grandson John Outcalt. The height of John Outcalt's dam was the subject of a legal case that went all the way to the State Supreme Court.</p>         <p><i>Time Period: 1800-1900</i></p>     </div>     </div>`)[0];
+                popup_e5efd8c09f886a0a537dd70ae4b98e7f.setContent(html_f4bc1ffc996397333d250a5e0154ff98);
+            
+        
+
+        marker_98fb55deab7aaa4cadf99e559bf9663a.bindPopup(popup_e5efd8c09f886a0a537dd70ae4b98e7f)
+        ;
+
+        
+    
+    
+            var feature_group_a9697b9ff78f42ffe93fbc0bea13e9a8 = L.featureGroup(
+                {}
+            ).addTo(map_99207b6d7249ca46c49e4f1bfaa69e7f);
+        
+    
+            var marker_d5ee8d5dc04b794e5b83ca16e3ae5b40 = L.marker(
+                [40.3808, -74.4079],
+                {}
+            ).addTo(feature_group_a9697b9ff78f42ffe93fbc0bea13e9a8);
+        
+    
+            var div_icon_5d7c04c5476d426b1c36bc2304aca425 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\"\u003e\n        Outcalt Hominy Mill\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
+            marker_d5ee8d5dc04b794e5b83ca16e3ae5b40.setIcon(div_icon_5d7c04c5476d426b1c36bc2304aca425);
+        
+    
+            var marker_e87de43524f07513090d31e1c5954c8e = L.marker(
+                [40.414234829578284, -74.3661219204212],
+                {}
+            ).addTo(feature_group_a9697b9ff78f42ffe93fbc0bea13e9a8);
+        
+    
+            var div_icon_d4d9b875ba7f17ed9fe1eb0a3ec4cd73 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\"\u003e\n        Leonard\u0027s Tavern\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
+            marker_e87de43524f07513090d31e1c5954c8e.setIcon(div_icon_d4d9b875ba7f17ed9fe1eb0a3ec4cd73);
+        
+    
+            var marker_c9067e70b737fd41f5a3945c9497f5dd = L.marker(
+                [40.3738, -74.4164],
+                {}
+            ).addTo(feature_group_a9697b9ff78f42ffe93fbc0bea13e9a8);
+        
+    
+            var div_icon_01f781d38a93339f48a6ff5e3ca3abaf = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\"\u003e\n        Ten Eyk\u0027s Old Forge\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
+            marker_c9067e70b737fd41f5a3945c9497f5dd.setIcon(div_icon_01f781d38a93339f48a6ff5e3ca3abaf);
+        
+    
+            var marker_8314d8fd3f9a4dff582ec58b07df7675 = L.marker(
+                [40.3805, -74.4078],
+                {}
+            ).addTo(feature_group_a9697b9ff78f42ffe93fbc0bea13e9a8);
+        
+    
+            var div_icon_8962ccc59cad3e06cacec8e42b928068 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\"\u003e\n        Weequahala\u0027s Old Dam\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
+            marker_8314d8fd3f9a4dff582ec58b07df7675.setIcon(div_icon_8962ccc59cad3e06cacec8e42b928068);
+        
+    
+            var marker_28a8a0a10a4fb538c439999a3cffdb35 = L.marker(
+                [40.3909, -74.3892],
+                {}
+            ).addTo(feature_group_a9697b9ff78f42ffe93fbc0bea13e9a8);
+        
+    
+            var div_icon_d5e29369b2e68c3a9edfae7da3c7cbd8 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-family:Arial; font-size:12px; color:black; background-color:white; padding:2px; border:1px solid black; white-space:nowrap;\"\u003e\n        St. Peter\u0027s Church\n    \u003c/div\u003e\n    ", "iconSize": [150, 36]});
+            marker_28a8a0a10a4fb538c439999a3cffdb35.setIcon(div_icon_d5e29369b2e68c3a9edfae7da3c7cbd8);
+        
+    
+            var layer_control_20dadf11e4461059fb345e87f2882213 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_8ad259165a4777afb39dd1e29455bd40,
+                },
+                overlays :  {
+                    "1700-1800" : feature_group_4fd28e64cae07d99d33ee66cc966f53f,
+                    "1800-1900" : feature_group_6b5eea7e9400673c6a485742f3c7626f,
+                    "Location Labels" : feature_group_a9697b9ff78f42ffe93fbc0bea13e9a8,
+                },
+            };
+            L.control.layers(
+                layer_control_20dadf11e4461059fb345e87f2882213.base_layers,
+                layer_control_20dadf11e4461059fb345e87f2882213.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_99207b6d7249ca46c49e4f1bfaa69e7f);
+        
+</script>
+</html>
