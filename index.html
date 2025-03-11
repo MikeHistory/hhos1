@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_a1a3ef1cf12b39b041a99fbd05d532f6 {
+                #map_86cc5652cc4d16fe931e9820c57134d1 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -53,21 +53,21 @@
     <span style="color:red">●</span> 1700-1725<br>
     <span style="color:blue">●</span> 1725-1750<br>
     <span style="color:brown">—</span> Lawrie's Road<br>
-    <span style="color:blue">—</span> King's Highway<br>
+    <span style="color:purple">—</span> King's Highway<br>
 </div>
     
 <h3 align="center" style="font-family:Arial; color:black; margin-top: 20px;">
     Hidden Highways of Colonial New Jersey
 </h3>
     
-            <div class="folium-map" id="map_a1a3ef1cf12b39b041a99fbd05d532f6" ></div>
+            <div class="folium-map" id="map_86cc5652cc4d16fe931e9820c57134d1" ></div>
         
 </body>
 <script>
     
     
-            var map_a1a3ef1cf12b39b041a99fbd05d532f6 = L.map(
-                "map_a1a3ef1cf12b39b041a99fbd05d532f6",
+            var map_86cc5652cc4d16fe931e9820c57134d1 = L.map(
+                "map_86cc5652cc4d16fe931e9820c57134d1",
                 {
                     center: [40.358913310044656, -74.35241161253222],
                     crs: L.CRS.EPSG3857,
@@ -81,45 +81,89 @@
 
         
     
-            var tile_layer_a9193150637ac8859e7e69acf82176cd = L.tileLayer(
+            var tile_layer_d9cf3de674f5327a4d5141e5492e92fc = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_a1a3ef1cf12b39b041a99fbd05d532f6);
+            ).addTo(map_86cc5652cc4d16fe931e9820c57134d1);
         
     
-            var feature_group_0f592f7ac2db16fcf813bcd990c38ffe = L.featureGroup(
+            var feature_group_055067de49c44523f2171799f9fe60bb = L.featureGroup(
                 {}
-            ).addTo(map_a1a3ef1cf12b39b041a99fbd05d532f6);
+            ).addTo(map_86cc5652cc4d16fe931e9820c57134d1);
         
     
-            var marker_4dd5526bc40c98de0acd6c9e6b0f89ab = L.marker(
-                [40.2604022197061, -74.27452218934268],
-                {}
-            ).addTo(feature_group_0f592f7ac2db16fcf813bcd990c38ffe);
+            var poly_line_8e2d5ea318349b55b0d0e7e8f8e44bfa = L.polyline(
+                [[40.49656620959912, -74.4450675387675], [40.35036598679335, -74.65704079580337], [40.213505523074744, -74.76584315397743]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_055067de49c44523f2171799f9fe60bb);
         
     
-            var icon_50443aff65cd9151027c368c876941a2 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_4dd5526bc40c98de0acd6c9e6b0f89ab.setIcon(icon_50443aff65cd9151027c368c876941a2);
-        
-    
-        var popup_4dc612fae90751b01b597fb517a75b92 = L.popup({"maxWidth": 250});
+        var popup_1aa3d3540c352c151dc4c41fc86ab171 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_832de0aa367c001c134d341d835c4195 = $(`<div id="html_832de0aa367c001c134d341d835c4195" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Freehold Hall of Records</h4>       <img src="images/freehold_court.jpg" style="width:200px;"><br>       <p>Original construction circa 1715, burnt in 1760's and rebuilt current structure.</p>       <p><i>Time Period: 1700-1725</i></p>     </div>     </div>`)[0];
-                popup_4dc612fae90751b01b597fb517a75b92.setContent(html_832de0aa367c001c134d341d835c4195);
+                var html_13d93023ec6d3c1d97308f96bf627bd8 = $(`<div id="html_13d93023ec6d3c1d97308f96bf627bd8" style="width: 100.0%; height: 100.0%;">King's Highway</div>`)[0];
+                popup_1aa3d3540c352c151dc4c41fc86ab171.setContent(html_13d93023ec6d3c1d97308f96bf627bd8);
             
         
 
-        marker_4dd5526bc40c98de0acd6c9e6b0f89ab.bindPopup(popup_4dc612fae90751b01b597fb517a75b92)
+        poly_line_8e2d5ea318349b55b0d0e7e8f8e44bfa.bindPopup(popup_1aa3d3540c352c151dc4c41fc86ab171)
         ;
 
         
     
     
-            marker_4dd5526bc40c98de0acd6c9e6b0f89ab.bindTooltip(
+            var marker_166fdf135e0d11525c0c345e8514cfa1 = L.marker(
+                [40.35036598679335, -74.65704079580337],
+                {}
+            ).addTo(feature_group_055067de49c44523f2171799f9fe60bb);
+        
+    
+            var div_icon_5eb115e81b30ac8722ab6f47efe05118 = L.divIcon({"className": "empty", "html": "\n\u003cdiv style=\"font-family: Arial; font-size: 9px; color: black; background-color: rgba(255,255,255,0.5); padding: 4px; border: 1px solid black; max-width: 125px; white-space: normal; overflow-wrap: break-word;\"\u003e\n  King\u0027s Highway\n\u003c/div\u003e\n", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_166fdf135e0d11525c0c345e8514cfa1.setIcon(div_icon_5eb115e81b30ac8722ab6f47efe05118);
+        
+    
+            marker_166fdf135e0d11525c0c345e8514cfa1.bindTooltip(
+                `<div>
+                     
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_6fb433c789b1729dea7da8e0e327c837 = L.featureGroup(
+                {}
+            ).addTo(map_86cc5652cc4d16fe931e9820c57134d1);
+        
+    
+            var marker_8897cdb69e97d684298170ef91a65006 = L.marker(
+                [40.2604022197061, -74.27452218934268],
+                {}
+            ).addTo(feature_group_6fb433c789b1729dea7da8e0e327c837);
+        
+    
+            var icon_4305583eea7b57ef572c1513fb9e60b5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8897cdb69e97d684298170ef91a65006.setIcon(icon_4305583eea7b57ef572c1513fb9e60b5);
+        
+    
+        var popup_38c0c0f4c02f613f46bb6a0ea1681c01 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_94d3d3f58393cf0d54d5ba6867068de6 = $(`<div id="html_94d3d3f58393cf0d54d5ba6867068de6" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Freehold Hall of Records</h4>       <img src="images/freehold_court.jpg" style="width:200px;"><br>       <p>Original construction circa 1715, burnt in 1760's and rebuilt current structure.</p>       <p><i>Time Period: 1700-1725</i></p>     </div>     </div>`)[0];
+                popup_38c0c0f4c02f613f46bb6a0ea1681c01.setContent(html_94d3d3f58393cf0d54d5ba6867068de6);
+            
+        
+
+        marker_8897cdb69e97d684298170ef91a65006.bindPopup(popup_38c0c0f4c02f613f46bb6a0ea1681c01)
+        ;
+
+        
+    
+    
+            marker_8897cdb69e97d684298170ef91a65006.bindTooltip(
                 `<div>
                      Freehold Hall of Records (1700-1725)
                  </div>`,
@@ -127,34 +171,34 @@
             );
         
     
-            var marker_470fa0e1039d6bfa0266feb5806898ee = L.marker(
+            var marker_d1c5f1511eb458e865bb3b132289639f = L.marker(
                 [40.17780118592052, -74.5840998506824],
                 {}
-            ).addTo(feature_group_0f592f7ac2db16fcf813bcd990c38ffe);
+            ).addTo(feature_group_6fb433c789b1729dea7da8e0e327c837);
         
     
-            var icon_5b3dc65c8bbf951ea5c366b4f48da411 = L.AwesomeMarkers.icon(
+            var icon_e104cfdc7c3f629cf1283df33bf64359 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_470fa0e1039d6bfa0266feb5806898ee.setIcon(icon_5b3dc65c8bbf951ea5c366b4f48da411);
+            marker_d1c5f1511eb458e865bb3b132289639f.setIcon(icon_e104cfdc7c3f629cf1283df33bf64359);
         
     
-        var popup_a82ca8d79c7fc9de65fdbf94a2a2f5b5 = L.popup({"maxWidth": 250});
+        var popup_c13d43a86bfae1808ea8b61df43af0b1 = L.popup({"maxWidth": 250});
 
         
             
-                var html_4ebb02454f719d882bb9386d73455fb3 = $(`<div id="html_4ebb02454f719d882bb9386d73455fb3" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Allentown</h4>       <img src="images/allentown.jpg" style="width:200px;"><br>       <p>Allentown, originally known as 'Allen's Town', developed along the Lower York Road, also referred to as Lawries Road or the Queens Highway.</p>       <p><i>Time Period: 1700-1725</i></p>     </div>     </div>`)[0];
-                popup_a82ca8d79c7fc9de65fdbf94a2a2f5b5.setContent(html_4ebb02454f719d882bb9386d73455fb3);
+                var html_6489bb091169396d179451f9b6c1db50 = $(`<div id="html_6489bb091169396d179451f9b6c1db50" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Allentown</h4>       <img src="images/allentown.jpg" style="width:200px;"><br>       <p>Allentown, originally known as 'Allen's Town', developed along the Lower York Road, also referred to as Lawries Road or the Queens Highway.</p>       <p><i>Time Period: 1700-1725</i></p>     </div>     </div>`)[0];
+                popup_c13d43a86bfae1808ea8b61df43af0b1.setContent(html_6489bb091169396d179451f9b6c1db50);
             
         
 
-        marker_470fa0e1039d6bfa0266feb5806898ee.bindPopup(popup_a82ca8d79c7fc9de65fdbf94a2a2f5b5)
+        marker_d1c5f1511eb458e865bb3b132289639f.bindPopup(popup_c13d43a86bfae1808ea8b61df43af0b1)
         ;
 
         
     
     
-            marker_470fa0e1039d6bfa0266feb5806898ee.bindTooltip(
+            marker_d1c5f1511eb458e865bb3b132289639f.bindTooltip(
                 `<div>
                      Allentown (1700-1725)
                  </div>`,
@@ -162,39 +206,39 @@
             );
         
     
-            var feature_group_e95b885f8f2d7119c51b3eb4254d68f3 = L.featureGroup(
+            var feature_group_7cd07f7713c2666d7c05796fe42fd573 = L.featureGroup(
                 {}
-            ).addTo(map_a1a3ef1cf12b39b041a99fbd05d532f6);
+            ).addTo(map_86cc5652cc4d16fe931e9820c57134d1);
         
     
-            var marker_bfeff33abde6dbb6987e787f4710e6a1 = L.marker(
+            var marker_f474a0ba50fda9c92d23341888db5a34 = L.marker(
                 [40.414234829578284, -74.3661219204212],
                 {}
-            ).addTo(feature_group_e95b885f8f2d7119c51b3eb4254d68f3);
+            ).addTo(feature_group_7cd07f7713c2666d7c05796fe42fd573);
         
     
-            var icon_d869898b69a62c33d04dfb70cb06e8dd = L.AwesomeMarkers.icon(
+            var icon_d21a513875ba86fa7caa184fa52e0565 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_bfeff33abde6dbb6987e787f4710e6a1.setIcon(icon_d869898b69a62c33d04dfb70cb06e8dd);
+            marker_f474a0ba50fda9c92d23341888db5a34.setIcon(icon_d21a513875ba86fa7caa184fa52e0565);
         
     
-        var popup_38a184e57ef26f37f51d657aa171d3b4 = L.popup({"maxWidth": 250});
+        var popup_e03295dcd1c81d13ef635c9a742584d2 = L.popup({"maxWidth": 250});
 
         
             
-                var html_12b140ee9b95359eeb6dc41098f41315 = $(`<div id="html_12b140ee9b95359eeb6dc41098f41315" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Leonard's Tavern</h4>       <img src="images/village_deli.jpeg" style="width:200px;"><br>       <p>Tavern operated by Captain John Leonard at the first crossing of the South River...</p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
-                popup_38a184e57ef26f37f51d657aa171d3b4.setContent(html_12b140ee9b95359eeb6dc41098f41315);
+                var html_776e4609642d051417702c62892f9fcf = $(`<div id="html_776e4609642d051417702c62892f9fcf" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Leonard's Tavern</h4>       <img src="images/village_deli.jpeg" style="width:200px;"><br>       <p>Tavern operated by Captain John Leonard at the first crossing of the South River...</p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
+                popup_e03295dcd1c81d13ef635c9a742584d2.setContent(html_776e4609642d051417702c62892f9fcf);
             
         
 
-        marker_bfeff33abde6dbb6987e787f4710e6a1.bindPopup(popup_38a184e57ef26f37f51d657aa171d3b4)
+        marker_f474a0ba50fda9c92d23341888db5a34.bindPopup(popup_e03295dcd1c81d13ef635c9a742584d2)
         ;
 
         
     
     
-            marker_bfeff33abde6dbb6987e787f4710e6a1.bindTooltip(
+            marker_f474a0ba50fda9c92d23341888db5a34.bindTooltip(
                 `<div>
                      Leonard's Tavern (1725-1750)
                  </div>`,
@@ -202,34 +246,34 @@
             );
         
     
-            var marker_057d26731ffb0d68f01a9b4e2fb07afc = L.marker(
+            var marker_da459984f1bc84b23468c2bd3812411a = L.marker(
                 [40.39106736222579, -74.38837644893785],
                 {}
-            ).addTo(feature_group_e95b885f8f2d7119c51b3eb4254d68f3);
+            ).addTo(feature_group_7cd07f7713c2666d7c05796fe42fd573);
         
     
-            var icon_1c8e7b929e9e5a7fb380b67fdf863c53 = L.AwesomeMarkers.icon(
+            var icon_62c9dd915c539ccf2d5c887407110141 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_057d26731ffb0d68f01a9b4e2fb07afc.setIcon(icon_1c8e7b929e9e5a7fb380b67fdf863c53);
+            marker_da459984f1bc84b23468c2bd3812411a.setIcon(icon_62c9dd915c539ccf2d5c887407110141);
         
     
-        var popup_a47985eb4845407ed1c52c5cda6145f7 = L.popup({"maxWidth": 250});
+        var popup_35d2aadefe2db65b3972ae429a9138de = L.popup({"maxWidth": 250});
 
         
             
-                var html_02ac1af344ade1617746a64dd0abcc94 = $(`<div id="html_02ac1af344ade1617746a64dd0abcc94" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">St. Peter's Church</h4>       <img src="images/St._Peters_Church_Spotswood.jpg" style="width:200px;"><br>       <p>First church in town, records date back to 1740's</p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
-                popup_a47985eb4845407ed1c52c5cda6145f7.setContent(html_02ac1af344ade1617746a64dd0abcc94);
+                var html_8702eb2c212da181ec375fadcf21a175 = $(`<div id="html_8702eb2c212da181ec375fadcf21a175" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">St. Peter's Church</h4>       <img src="images/St._Peters_Church_Spotswood.jpg" style="width:200px;"><br>       <p>First church in town, records date back to 1740's</p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
+                popup_35d2aadefe2db65b3972ae429a9138de.setContent(html_8702eb2c212da181ec375fadcf21a175);
             
         
 
-        marker_057d26731ffb0d68f01a9b4e2fb07afc.bindPopup(popup_a47985eb4845407ed1c52c5cda6145f7)
+        marker_da459984f1bc84b23468c2bd3812411a.bindPopup(popup_35d2aadefe2db65b3972ae429a9138de)
         ;
 
         
     
     
-            marker_057d26731ffb0d68f01a9b4e2fb07afc.bindTooltip(
+            marker_da459984f1bc84b23468c2bd3812411a.bindTooltip(
                 `<div>
                      St. Peter's Church (1725-1750)
                  </div>`,
@@ -237,34 +281,34 @@
             );
         
     
-            var marker_d16b01c8cacba7567d0b47ae9d6558e4 = L.marker(
+            var marker_9cf294da943fc5646ca087219a089cb0 = L.marker(
                 [40.37467972557094, -74.51125691094202],
                 {}
-            ).addTo(feature_group_e95b885f8f2d7119c51b3eb4254d68f3);
+            ).addTo(feature_group_7cd07f7713c2666d7c05796fe42fd573);
         
     
-            var icon_447696b58d4702afc80da26ef4c51b73 = L.AwesomeMarkers.icon(
+            var icon_db23d81c1738c18bf5ba81e89fb0b331 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_d16b01c8cacba7567d0b47ae9d6558e4.setIcon(icon_447696b58d4702afc80da26ef4c51b73);
+            marker_9cf294da943fc5646ca087219a089cb0.setIcon(icon_db23d81c1738c18bf5ba81e89fb0b331);
         
     
-        var popup_ff941ca20c235f9479aa65f3db6adab4 = L.popup({"maxWidth": 250});
+        var popup_292b00aa9f896cf0f005811df6a1062a = L.popup({"maxWidth": 250});
 
         
             
-                var html_577572e65e02bd61f7b681a52173bceb = $(`<div id="html_577572e65e02bd61f7b681a52173bceb" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Dayton Village</h4>       <img src="images/dayton.jpg" style="width:200px;"><br>       <p>Colonial/Revolutionary Era Village. Visited by George Washington.</p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
-                popup_ff941ca20c235f9479aa65f3db6adab4.setContent(html_577572e65e02bd61f7b681a52173bceb);
+                var html_5955c1fbb33cdab365f5a28dbe29acd9 = $(`<div id="html_5955c1fbb33cdab365f5a28dbe29acd9" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Dayton Village</h4>       <img src="images/dayton.jpg" style="width:200px;"><br>       <p>Colonial/Revolutionary Era Village. Visited by George Washington.</p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
+                popup_292b00aa9f896cf0f005811df6a1062a.setContent(html_5955c1fbb33cdab365f5a28dbe29acd9);
             
         
 
-        marker_d16b01c8cacba7567d0b47ae9d6558e4.bindPopup(popup_ff941ca20c235f9479aa65f3db6adab4)
+        marker_9cf294da943fc5646ca087219a089cb0.bindPopup(popup_292b00aa9f896cf0f005811df6a1062a)
         ;
 
         
     
     
-            marker_d16b01c8cacba7567d0b47ae9d6558e4.bindTooltip(
+            marker_9cf294da943fc5646ca087219a089cb0.bindTooltip(
                 `<div>
                      Dayton Village (1725-1750)
                  </div>`,
@@ -272,34 +316,34 @@
             );
         
     
-            var marker_fc05b96c61437e190355b14262aea12c = L.marker(
+            var marker_df7cd42025374f46eaebeed9c5876723 = L.marker(
                 [40.137081813567065, -74.55927372411097],
                 {}
-            ).addTo(feature_group_e95b885f8f2d7119c51b3eb4254d68f3);
+            ).addTo(feature_group_7cd07f7713c2666d7c05796fe42fd573);
         
     
-            var icon_12ae7e8428332ab255da5e677ac22ee5 = L.AwesomeMarkers.icon(
+            var icon_5c4df3c09194a42d6c203612f21caf40 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_fc05b96c61437e190355b14262aea12c.setIcon(icon_12ae7e8428332ab255da5e677ac22ee5);
+            marker_df7cd42025374f46eaebeed9c5876723.setIcon(icon_5c4df3c09194a42d6c203612f21caf40);
         
     
-        var popup_e5f72995de3fa336211633c3fa5d5855 = L.popup({"maxWidth": 250});
+        var popup_ce190ff4c1e7f2c1a95b14eac7b69bd8 = L.popup({"maxWidth": 250});
 
         
             
-                var html_caabb6a4814c78274211d19e3467d84b = $(`<div id="html_caabb6a4814c78274211d19e3467d84b" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Walnford</h4>       <img src="images/Walnford.jpg" style="width:200px;"><br>       <p>This settlement developed along the Burlington Path, contributing to the network of communities that facilitated travel and commerce in colonial New Jersey.</p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
-                popup_e5f72995de3fa336211633c3fa5d5855.setContent(html_caabb6a4814c78274211d19e3467d84b);
+                var html_73625be942ad7b94d0ea8de2802a3d78 = $(`<div id="html_73625be942ad7b94d0ea8de2802a3d78" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Walnford</h4>       <img src="images/Walnford.jpg" style="width:200px;"><br>       <p>This settlement developed along the Burlington Path, contributing to the network of communities that facilitated travel and commerce in colonial New Jersey.</p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
+                popup_ce190ff4c1e7f2c1a95b14eac7b69bd8.setContent(html_73625be942ad7b94d0ea8de2802a3d78);
             
         
 
-        marker_fc05b96c61437e190355b14262aea12c.bindPopup(popup_e5f72995de3fa336211633c3fa5d5855)
+        marker_df7cd42025374f46eaebeed9c5876723.bindPopup(popup_ce190ff4c1e7f2c1a95b14eac7b69bd8)
         ;
 
         
     
     
-            marker_fc05b96c61437e190355b14262aea12c.bindTooltip(
+            marker_df7cd42025374f46eaebeed9c5876723.bindTooltip(
                 `<div>
                      Walnford (1725-1750)
                  </div>`,
@@ -307,34 +351,34 @@
             );
         
     
-            var marker_172eaf6eb0095e7c5f539f3908c906f2 = L.marker(
+            var marker_5874cc8515fa54f2b0e77103585eef39 = L.marker(
                 [40.268966315936225, -74.52382086352985],
                 {}
-            ).addTo(feature_group_e95b885f8f2d7119c51b3eb4254d68f3);
+            ).addTo(feature_group_7cd07f7713c2666d7c05796fe42fd573);
         
     
-            var icon_cef8889a44ba8a4f7a0b6a47a3aa32c8 = L.AwesomeMarkers.icon(
+            var icon_db3b1fe361659ccdafdb1bb458bf4c16 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_172eaf6eb0095e7c5f539f3908c906f2.setIcon(icon_cef8889a44ba8a4f7a0b6a47a3aa32c8);
+            marker_5874cc8515fa54f2b0e77103585eef39.setIcon(icon_db3b1fe361659ccdafdb1bb458bf4c16);
         
     
-        var popup_b2fa62ae2c12645b0d05a9367d82eb08 = L.popup({"maxWidth": 250});
+        var popup_7d0ce15ddfb2309b90860f54e4cda7df = L.popup({"maxWidth": 250});
 
         
             
-                var html_0ed950f092c8aa0829a588913f701298 = $(`<div id="html_0ed950f092c8aa0829a588913f701298" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Hightstown</h4>       <img src="images/hightstown.jpg" style="width:200px;"><br>       <p>Located along the Burlington Path, Hightstown emerged as a significant settlement due to its strategic position on this route. </p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
-                popup_b2fa62ae2c12645b0d05a9367d82eb08.setContent(html_0ed950f092c8aa0829a588913f701298);
+                var html_9bfcdaff1228872ccae675b589c2df15 = $(`<div id="html_9bfcdaff1228872ccae675b589c2df15" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Hightstown</h4>       <img src="images/hightstown.jpg" style="width:200px;"><br>       <p>Located along the Burlington Path, Hightstown emerged as a significant settlement due to its strategic position on this route. </p>       <p><i>Time Period: 1725-1750</i></p>     </div>     </div>`)[0];
+                popup_7d0ce15ddfb2309b90860f54e4cda7df.setContent(html_9bfcdaff1228872ccae675b589c2df15);
             
         
 
-        marker_172eaf6eb0095e7c5f539f3908c906f2.bindPopup(popup_b2fa62ae2c12645b0d05a9367d82eb08)
+        marker_5874cc8515fa54f2b0e77103585eef39.bindPopup(popup_7d0ce15ddfb2309b90860f54e4cda7df)
         ;
 
         
     
     
-            marker_172eaf6eb0095e7c5f539f3908c906f2.bindTooltip(
+            marker_5874cc8515fa54f2b0e77103585eef39.bindTooltip(
                 `<div>
                      Hightstown (1725-1750)
                  </div>`,
@@ -342,39 +386,39 @@
             );
         
     
-            var feature_group_e5dab0e82d27466071be3e65d5d1581c = L.featureGroup(
+            var feature_group_5263b62afbb347e4d34e8b059b23e59a = L.featureGroup(
                 {}
-            ).addTo(map_a1a3ef1cf12b39b041a99fbd05d532f6);
+            ).addTo(map_86cc5652cc4d16fe931e9820c57134d1);
         
     
-            var marker_914d931fa6787b2cdd13b137307e0ac9 = L.marker(
+            var marker_af3a056a801f9c350f07de44638b3bb0 = L.marker(
                 [40.3805, -74.4078],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_852ca3c5c8859c3ebf1f09871294edef = L.AwesomeMarkers.icon(
+            var icon_84e3c0fbc3536fabcf57355c5f5338af = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_914d931fa6787b2cdd13b137307e0ac9.setIcon(icon_852ca3c5c8859c3ebf1f09871294edef);
+            marker_af3a056a801f9c350f07de44638b3bb0.setIcon(icon_84e3c0fbc3536fabcf57355c5f5338af);
         
     
-        var popup_a0657cf2f7ac31723be73e618a61fad4 = L.popup({"maxWidth": 250});
+        var popup_564ef576a683f5650231aed260ba9a61 = L.popup({"maxWidth": 250});
 
         
             
-                var html_8723ac214734b5fc930cef36d9720113 = $(`<div id="html_8723ac214734b5fc930cef36d9720113" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Weequahala's Uppermost Dam</h4>       <img src="https://github.com/MikeHistory/Spotswood-History/blob/main/images/IMG_3345.jpeg?raw=true" style="width:200px;"><br>       <p>Weeqhala's mill dam, referenced on several contemporary deeds...</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_a0657cf2f7ac31723be73e618a61fad4.setContent(html_8723ac214734b5fc930cef36d9720113);
+                var html_84cda4857dc4d8592cbf1bd9ac449116 = $(`<div id="html_84cda4857dc4d8592cbf1bd9ac449116" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Weequahala's Uppermost Dam</h4>       <img src="https://github.com/MikeHistory/Spotswood-History/blob/main/images/IMG_3345.jpeg?raw=true" style="width:200px;"><br>       <p>Weeqhala's mill dam, referenced on several contemporary deeds...</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_564ef576a683f5650231aed260ba9a61.setContent(html_84cda4857dc4d8592cbf1bd9ac449116);
             
         
 
-        marker_914d931fa6787b2cdd13b137307e0ac9.bindPopup(popup_a0657cf2f7ac31723be73e618a61fad4)
+        marker_af3a056a801f9c350f07de44638b3bb0.bindPopup(popup_564ef576a683f5650231aed260ba9a61)
         ;
 
         
     
     
-            marker_914d931fa6787b2cdd13b137307e0ac9.bindTooltip(
+            marker_af3a056a801f9c350f07de44638b3bb0.bindTooltip(
                 `<div>
                      Weequahala's Uppermost Dam (pre-1700)
                  </div>`,
@@ -382,34 +426,34 @@
             );
         
     
-            var marker_4b817eb2164cdc0f1da8217c2fc909d7 = L.marker(
+            var marker_b7d9fe69fa9ccef15d906ccf6d23967f = L.marker(
                 [40.50677736636713, -74.26535624026035],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_02d4da027ba7622d6aa46929fb1bd8f8 = L.AwesomeMarkers.icon(
+            var icon_8e4ce60292cd36435b0cdac57daeee0d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_4b817eb2164cdc0f1da8217c2fc909d7.setIcon(icon_02d4da027ba7622d6aa46929fb1bd8f8);
+            marker_b7d9fe69fa9ccef15d906ccf6d23967f.setIcon(icon_8e4ce60292cd36435b0cdac57daeee0d);
         
     
-        var popup_a7e243541d434f285ffce5d4ac36d5fa = L.popup({"maxWidth": 250});
+        var popup_1ef89aa0971d7f664709087f35b22745 = L.popup({"maxWidth": 250});
 
         
             
-                var html_4583389a283377b4d03e84dba37c7828 = $(`<div id="html_4583389a283377b4d03e84dba37c7828" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Perth Amboy</h4>       <img src="images/Perth_amboy_courthouse.jpg" style="width:200px;"><br>       <p>Circa 1717. Weequahala was here multiple times for diplomatic reasons before his death...</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_a7e243541d434f285ffce5d4ac36d5fa.setContent(html_4583389a283377b4d03e84dba37c7828);
+                var html_c891bb2bbb83326d5f292414426830bc = $(`<div id="html_c891bb2bbb83326d5f292414426830bc" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Perth Amboy</h4>       <img src="images/Perth_amboy_courthouse.jpg" style="width:200px;"><br>       <p>Circa 1717. Weequahala was here multiple times for diplomatic reasons before his death...</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_1ef89aa0971d7f664709087f35b22745.setContent(html_c891bb2bbb83326d5f292414426830bc);
             
         
 
-        marker_4b817eb2164cdc0f1da8217c2fc909d7.bindPopup(popup_a7e243541d434f285ffce5d4ac36d5fa)
+        marker_b7d9fe69fa9ccef15d906ccf6d23967f.bindPopup(popup_1ef89aa0971d7f664709087f35b22745)
         ;
 
         
     
     
-            marker_4b817eb2164cdc0f1da8217c2fc909d7.bindTooltip(
+            marker_b7d9fe69fa9ccef15d906ccf6d23967f.bindTooltip(
                 `<div>
                      Perth Amboy (pre-1700)
                  </div>`,
@@ -417,34 +461,34 @@
             );
         
     
-            var marker_2fe7ea9aa73efe14cd06528e22e98990 = L.marker(
+            var marker_1e2e9bf167303f4f6c1364ac98e21442 = L.marker(
                 [40.30974655576768, -74.51673440796021],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_c26f17be3c7505da471f6dcfa075efef = L.AwesomeMarkers.icon(
+            var icon_80b0335858a864f2c9134372f9dd4622 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_2fe7ea9aa73efe14cd06528e22e98990.setIcon(icon_c26f17be3c7505da471f6dcfa075efef);
+            marker_1e2e9bf167303f4f6c1364ac98e21442.setIcon(icon_80b0335858a864f2c9134372f9dd4622);
         
     
-        var popup_acff40171532b4fffef264b20f048d1c = L.popup({"maxWidth": 250});
+        var popup_1451f5471dd519ea7e5dea0cb4e1bb7d = L.popup({"maxWidth": 250});
 
         
             
-                var html_0ad955df31115de8a631d2d8a8040a46 = $(`<div id="html_0ad955df31115de8a631d2d8a8040a46" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Cranbury Village</h4>       <img src="images/cranbury_inn.jpg" style="width:200px;"><br>       <p>The earliest recorded evidence of buildings in Cranbury comes from a deed of sale dated March 1, 1698...</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_acff40171532b4fffef264b20f048d1c.setContent(html_0ad955df31115de8a631d2d8a8040a46);
+                var html_d67289c953b17b0d1f3d0fcfd2e509a7 = $(`<div id="html_d67289c953b17b0d1f3d0fcfd2e509a7" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Cranbury Village</h4>       <img src="images/cranbury_inn.jpg" style="width:200px;"><br>       <p>The earliest recorded evidence of buildings in Cranbury comes from a deed of sale dated March 1, 1698...</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_1451f5471dd519ea7e5dea0cb4e1bb7d.setContent(html_d67289c953b17b0d1f3d0fcfd2e509a7);
             
         
 
-        marker_2fe7ea9aa73efe14cd06528e22e98990.bindPopup(popup_acff40171532b4fffef264b20f048d1c)
+        marker_1e2e9bf167303f4f6c1364ac98e21442.bindPopup(popup_1451f5471dd519ea7e5dea0cb4e1bb7d)
         ;
 
         
     
     
-            marker_2fe7ea9aa73efe14cd06528e22e98990.bindTooltip(
+            marker_1e2e9bf167303f4f6c1364ac98e21442.bindTooltip(
                 `<div>
                      Cranbury Village (pre-1700)
                  </div>`,
@@ -452,34 +496,34 @@
             );
         
     
-            var marker_799f5a243d84ea7f2d53cfe5f1fe7e15 = L.marker(
+            var marker_1b37cc5f74bc7cb9d364078134165a15 = L.marker(
                 [40.08024511358344, -74.86127941291058],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_06133eb98ce41ac5cf1a93b4b657f330 = L.AwesomeMarkers.icon(
+            var icon_43d0c88e81a6368dd598f7531d96e4ae = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_799f5a243d84ea7f2d53cfe5f1fe7e15.setIcon(icon_06133eb98ce41ac5cf1a93b4b657f330);
+            marker_1b37cc5f74bc7cb9d364078134165a15.setIcon(icon_43d0c88e81a6368dd598f7531d96e4ae);
         
     
-        var popup_00cc0e60649101410de2cb648d9d586f = L.popup({"maxWidth": 250});
+        var popup_3364eb596b7b3d35c362df06fbb66c93 = L.popup({"maxWidth": 250});
 
         
             
-                var html_af4939e1e1ff573da3cf4ac657a193cd = $(`<div id="html_af4939e1e1ff573da3cf4ac657a193cd" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Burlington Village</h4>       <img src="images/burlington.jpg" style="width:200px;"><br>       <p>Revell House, circa 1685, oldest building in Burlington County.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_00cc0e60649101410de2cb648d9d586f.setContent(html_af4939e1e1ff573da3cf4ac657a193cd);
+                var html_7365939aa34b2b19e4c8a6ce91139b96 = $(`<div id="html_7365939aa34b2b19e4c8a6ce91139b96" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Burlington Village</h4>       <img src="images/burlington.jpg" style="width:200px;"><br>       <p>Revell House, circa 1685, oldest building in Burlington County.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_3364eb596b7b3d35c362df06fbb66c93.setContent(html_7365939aa34b2b19e4c8a6ce91139b96);
             
         
 
-        marker_799f5a243d84ea7f2d53cfe5f1fe7e15.bindPopup(popup_00cc0e60649101410de2cb648d9d586f)
+        marker_1b37cc5f74bc7cb9d364078134165a15.bindPopup(popup_3364eb596b7b3d35c362df06fbb66c93)
         ;
 
         
     
     
-            marker_799f5a243d84ea7f2d53cfe5f1fe7e15.bindTooltip(
+            marker_1b37cc5f74bc7cb9d364078134165a15.bindTooltip(
                 `<div>
                      Burlington Village (pre-1700)
                  </div>`,
@@ -487,34 +531,34 @@
             );
         
     
-            var marker_81bb1a6ef2c5dbcd491483939678d32a = L.marker(
+            var marker_a5797cf62417db29d7ad651245212cd5 = L.marker(
                 [40.153511076914754, -74.64716793597145],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_80d79b5e8adf3f314f9c77deec04fcd0 = L.AwesomeMarkers.icon(
+            var icon_796a685f96c44c53bb3629d3bdc2b6e8 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_81bb1a6ef2c5dbcd491483939678d32a.setIcon(icon_80d79b5e8adf3f314f9c77deec04fcd0);
+            marker_a5797cf62417db29d7ad651245212cd5.setIcon(icon_796a685f96c44c53bb3629d3bdc2b6e8);
         
     
-        var popup_a402523ac50eaf5d6c81f1c5943df0ed = L.popup({"maxWidth": 250});
+        var popup_0e1401959c68cedec2ca1cb5e4a71735 = L.popup({"maxWidth": 250});
 
         
             
-                var html_bcb65ae031ac82374ebff996d55f793d = $(`<div id="html_bcb65ae031ac82374ebff996d55f793d" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Crosswicks</h4>       <img src="images/crosswicks.jpg" style="width:200px;"><br>       <p>Native American Settlement, eventually under colonist control it was ahot bed for revolutionary activity.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_a402523ac50eaf5d6c81f1c5943df0ed.setContent(html_bcb65ae031ac82374ebff996d55f793d);
+                var html_f38b3cd9e894da46a234b3f933a2a164 = $(`<div id="html_f38b3cd9e894da46a234b3f933a2a164" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Crosswicks</h4>       <img src="images/crosswicks.jpg" style="width:200px;"><br>       <p>Native American Settlement, eventually under colonist control it was ahot bed for revolutionary activity.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_0e1401959c68cedec2ca1cb5e4a71735.setContent(html_f38b3cd9e894da46a234b3f933a2a164);
             
         
 
-        marker_81bb1a6ef2c5dbcd491483939678d32a.bindPopup(popup_a402523ac50eaf5d6c81f1c5943df0ed)
+        marker_a5797cf62417db29d7ad651245212cd5.bindPopup(popup_0e1401959c68cedec2ca1cb5e4a71735)
         ;
 
         
     
     
-            marker_81bb1a6ef2c5dbcd491483939678d32a.bindTooltip(
+            marker_a5797cf62417db29d7ad651245212cd5.bindTooltip(
                 `<div>
                      Crosswicks (pre-1700)
                  </div>`,
@@ -522,34 +566,34 @@
             );
         
     
-            var marker_251dc4a4e9b4bd795d290958954e917f = L.marker(
+            var marker_d4222f840916196bb110322d91cae8c0 = L.marker(
                 [40.488358002733264, -74.2816189760202],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_4c5e466267c4bedfd1a982aa9eb83faf = L.AwesomeMarkers.icon(
+            var icon_203441336cfc054255c6e51071d8a2cc = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_251dc4a4e9b4bd795d290958954e917f.setIcon(icon_4c5e466267c4bedfd1a982aa9eb83faf);
+            marker_d4222f840916196bb110322d91cae8c0.setIcon(icon_203441336cfc054255c6e51071d8a2cc);
         
     
-        var popup_dcb564e14e596b63ce1e1b187a28aa67 = L.popup({"maxWidth": 250});
+        var popup_310b3555f1ed5f450fa893b65765e961 = L.popup({"maxWidth": 250});
 
         
             
-                var html_d65acacb78a2b37fd6ae19997ce8209d = $(`<div id="html_d65acacb78a2b37fd6ae19997ce8209d" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Radford's Ferry/South Amboy</h4>       <img src="images/radfordferry.jpg" style="width:200px;"><br>       <p>Radford’s Ferry was an early colonial ferry crossing on the south shore of the Raritan River, serving as a vital link between New Jersey and New York. Established by the late 17th century, it became the likely eastern terminus of Lawrie’s Road (Burlington Path)—the overland route connecting Perth Amboy to Burlington. This location later developed into South Amboy, officially chartered in 1798. Today, its legacy remains in Radford Ferry Road and the South Amboy Ferry Terminal, marking its historic role in early New Jersey transportation.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_dcb564e14e596b63ce1e1b187a28aa67.setContent(html_d65acacb78a2b37fd6ae19997ce8209d);
+                var html_34cea5b5b944a77bb0dabb8a4b92df41 = $(`<div id="html_34cea5b5b944a77bb0dabb8a4b92df41" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Radford's Ferry/South Amboy</h4>       <img src="images/radfordferry.jpg" style="width:200px;"><br>       <p>Radford’s Ferry was an early colonial ferry crossing on the south shore of the Raritan River, serving as a vital link between New Jersey and New York. Established by the late 17th century, it became the likely eastern terminus of Lawrie’s Road (Burlington Path)—the overland route connecting Perth Amboy to Burlington. This location later developed into South Amboy, officially chartered in 1798. Today, its legacy remains in Radford Ferry Road and the South Amboy Ferry Terminal, marking its historic role in early New Jersey transportation.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_310b3555f1ed5f450fa893b65765e961.setContent(html_34cea5b5b944a77bb0dabb8a4b92df41);
             
         
 
-        marker_251dc4a4e9b4bd795d290958954e917f.bindPopup(popup_dcb564e14e596b63ce1e1b187a28aa67)
+        marker_d4222f840916196bb110322d91cae8c0.bindPopup(popup_310b3555f1ed5f450fa893b65765e961)
         ;
 
         
     
     
-            marker_251dc4a4e9b4bd795d290958954e917f.bindTooltip(
+            marker_d4222f840916196bb110322d91cae8c0.bindTooltip(
                 `<div>
                      Radford's Ferry/South Amboy (pre-1700)
                  </div>`,
@@ -557,34 +601,34 @@
             );
         
     
-            var marker_cd27f79c1c695b700d76d814975fa79a = L.marker(
+            var marker_4f93b83296f1405272e4666f33d9dffc = L.marker(
                 [40.49656620959912, -74.4450675387675],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_feff214c17c8715ee518ae2d802d28bb = L.AwesomeMarkers.icon(
+            var icon_e6c4184d949673fc9e729fe50f17eae6 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_cd27f79c1c695b700d76d814975fa79a.setIcon(icon_feff214c17c8715ee518ae2d802d28bb);
+            marker_4f93b83296f1405272e4666f33d9dffc.setIcon(icon_e6c4184d949673fc9e729fe50f17eae6);
         
     
-        var popup_069ac8461360059fe0c4292f1b6f6493 = L.popup({"maxWidth": 250});
+        var popup_1d97dd2d91ba20ae3a98ace82ee66ada = L.popup({"maxWidth": 250});
 
         
             
-                var html_36882b69245bc5e76cb208bf20a89395 = $(`<div id="html_36882b69245bc5e76cb208bf20a89395" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Inian's Ferry/New Brunswick</h4>       <img src="images/new_brusnwick.jpg" style="width:200px;"><br>       <p>New Brunswick, New Jersey, originated in 1681 as 'Inian's Ferry,' a settlement founded by John Inian and English investors at a key Raritan River crossing. Named after the British House of Brunswick, it was incorporated as a town in 1730, growing from a ferry hub into a colonial trade center. Early structures like the 1739 Buccleuch Mansion mark its roots, while the Sign of the Red Lion Tavern hosted Queen’s College classes in 1771.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_069ac8461360059fe0c4292f1b6f6493.setContent(html_36882b69245bc5e76cb208bf20a89395);
+                var html_2ca0227fac64907e367f6aab7f9f98c8 = $(`<div id="html_2ca0227fac64907e367f6aab7f9f98c8" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Inian's Ferry/New Brunswick</h4>       <img src="images/new_brusnwick.jpg" style="width:200px;"><br>       <p>New Brunswick, New Jersey, originated in 1681 as 'Inian's Ferry,' a settlement founded by John Inian and English investors at a key Raritan River crossing. Named after the British House of Brunswick, it was incorporated as a town in 1730, growing from a ferry hub into a colonial trade center. Early structures like the 1739 Buccleuch Mansion mark its roots, while the Sign of the Red Lion Tavern hosted Queen’s College classes in 1771.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_1d97dd2d91ba20ae3a98ace82ee66ada.setContent(html_2ca0227fac64907e367f6aab7f9f98c8);
             
         
 
-        marker_cd27f79c1c695b700d76d814975fa79a.bindPopup(popup_069ac8461360059fe0c4292f1b6f6493)
+        marker_4f93b83296f1405272e4666f33d9dffc.bindPopup(popup_1d97dd2d91ba20ae3a98ace82ee66ada)
         ;
 
         
     
     
-            marker_cd27f79c1c695b700d76d814975fa79a.bindTooltip(
+            marker_4f93b83296f1405272e4666f33d9dffc.bindTooltip(
                 `<div>
                      Inian's Ferry/New Brunswick (pre-1700)
                  </div>`,
@@ -592,34 +636,34 @@
             );
         
     
-            var marker_989bae3ae9b89d2b030e0f6ffa971f1d = L.marker(
+            var marker_45ecad64d7cfcca1b197783b48697feb = L.marker(
                 [40.35036598679335, -74.65704079580337],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_2f02644f8b0876bfa9d1ce2803ab885f = L.AwesomeMarkers.icon(
+            var icon_23ca87ff11e632a1eb2592697e48669c = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_989bae3ae9b89d2b030e0f6ffa971f1d.setIcon(icon_2f02644f8b0876bfa9d1ce2803ab885f);
+            marker_45ecad64d7cfcca1b197783b48697feb.setIcon(icon_23ca87ff11e632a1eb2592697e48669c);
         
     
-        var popup_05c7d485ef98e8eae004b55ff8216ef4 = L.popup({"maxWidth": 250});
+        var popup_b7195951e385a2b9196de4b8b6331aef = L.popup({"maxWidth": 250});
 
         
             
-                var html_0c3207c81681d2f1b125a14335b571ba = $(`<div id="html_0c3207c81681d2f1b125a14335b571ba" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Princeton</h4>       <img src="images/new_brusnwick.jpg" style="width:200px;"><br>       <p>Princeton, New Jersey, began around 1696 as 'Stony Brook,' a small Quaker settlement along early trails that became the King’s Highway. It grew into a village by the 1720s, adopting the name 'Princeton' in the 1730s, and served as a key stop between New Brunswick and Trenton. The 1726 Stony Brook Meeting House and the 1746 founding of the College of New Jersey (later Princeton University) highlight its colonial roots and rising prominence.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_05c7d485ef98e8eae004b55ff8216ef4.setContent(html_0c3207c81681d2f1b125a14335b571ba);
+                var html_f04efa02a08cf4e2712f5375f109890e = $(`<div id="html_f04efa02a08cf4e2712f5375f109890e" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Princeton</h4>       <img src="images/new_brusnwick.jpg" style="width:200px;"><br>       <p>Princeton, New Jersey, began around 1696 as 'Stony Brook,' a small Quaker settlement along early trails that became the King’s Highway. It grew into a village by the 1720s, adopting the name 'Princeton' in the 1730s, and served as a key stop between New Brunswick and Trenton. The 1726 Stony Brook Meeting House and the 1746 founding of the College of New Jersey (later Princeton University) highlight its colonial roots and rising prominence.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_b7195951e385a2b9196de4b8b6331aef.setContent(html_f04efa02a08cf4e2712f5375f109890e);
             
         
 
-        marker_989bae3ae9b89d2b030e0f6ffa971f1d.bindPopup(popup_05c7d485ef98e8eae004b55ff8216ef4)
+        marker_45ecad64d7cfcca1b197783b48697feb.bindPopup(popup_b7195951e385a2b9196de4b8b6331aef)
         ;
 
         
     
     
-            marker_989bae3ae9b89d2b030e0f6ffa971f1d.bindTooltip(
+            marker_45ecad64d7cfcca1b197783b48697feb.bindTooltip(
                 `<div>
                      Princeton (pre-1700)
                  </div>`,
@@ -627,34 +671,34 @@
             );
         
     
-            var marker_c0ca5272dab8dd47850f257f0208d143 = L.marker(
+            var marker_c03aae01d561b91c104f2743ec31451b = L.marker(
                 [40.213505523074744, -74.76584315397743],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_d29573e03dc9d0c3440f7dca32a37625 = L.AwesomeMarkers.icon(
+            var icon_1d47b32c623114be9f7e994f1e8dc552 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_c0ca5272dab8dd47850f257f0208d143.setIcon(icon_d29573e03dc9d0c3440f7dca32a37625);
+            marker_c03aae01d561b91c104f2743ec31451b.setIcon(icon_1d47b32c623114be9f7e994f1e8dc552);
         
     
-        var popup_e80845efef1e80b6b1a61cc43f75f66c = L.popup({"maxWidth": 250});
+        var popup_86bc17f2f4561a14276bd6986bff36c3 = L.popup({"maxWidth": 250});
 
         
             
-                var html_ccf5d0d9382fb441f13f0a5fcacccae7 = $(`<div id="html_ccf5d0d9382fb441f13f0a5fcacccae7" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Trenton</h4>       <img src="images/trenton.jpg" style="width:200px;"><br>       <p>Trenton, New Jersey, was founded in 1679 when Quaker Mahlon Stacy settled along the Delaware River, establishing a mill at 'The Falls.' Renamed 'Trent’s Town' in 1719 after his son sold lots, it grew into a key colonial hub and the King’s Highway’s western terminus by 1730. Its strategic river crossing fueled expansion, setting the stage for its later role as New Jersey’s capital.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_e80845efef1e80b6b1a61cc43f75f66c.setContent(html_ccf5d0d9382fb441f13f0a5fcacccae7);
+                var html_cad5c919fa39e51cc5e2212e92081b8f = $(`<div id="html_cad5c919fa39e51cc5e2212e92081b8f" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Trenton</h4>       <img src="images/trenton.jpg" style="width:200px;"><br>       <p>Trenton, New Jersey, was founded in 1679 when Quaker Mahlon Stacy settled along the Delaware River, establishing a mill at 'The Falls.' Renamed 'Trent’s Town' in 1719 after his son sold lots, it grew into a key colonial hub and the King’s Highway’s western terminus by 1730. Its strategic river crossing fueled expansion, setting the stage for its later role as New Jersey’s capital.</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_86bc17f2f4561a14276bd6986bff36c3.setContent(html_cad5c919fa39e51cc5e2212e92081b8f);
             
         
 
-        marker_c0ca5272dab8dd47850f257f0208d143.bindPopup(popup_e80845efef1e80b6b1a61cc43f75f66c)
+        marker_c03aae01d561b91c104f2743ec31451b.bindPopup(popup_86bc17f2f4561a14276bd6986bff36c3)
         ;
 
         
     
     
-            marker_c0ca5272dab8dd47850f257f0208d143.bindTooltip(
+            marker_c03aae01d561b91c104f2743ec31451b.bindTooltip(
                 `<div>
                      Trenton (pre-1700)
                  </div>`,
@@ -662,34 +706,34 @@
             );
         
     
-            var marker_bffc475abaf59e29b409100a89c2ce99 = L.marker(
+            var marker_656c5dd41ee4efd4865aea81700eca46 = L.marker(
                 [40.38962205624657, -74.39100427110779],
                 {}
-            ).addTo(feature_group_e5dab0e82d27466071be3e65d5d1581c);
+            ).addTo(feature_group_5263b62afbb347e4d34e8b059b23e59a);
         
     
-            var icon_dc19d6de2ed3150607847655332ec211 = L.AwesomeMarkers.icon(
+            var icon_091d39b562cba6302eef93dd94c547e3 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_bffc475abaf59e29b409100a89c2ce99.setIcon(icon_dc19d6de2ed3150607847655332ec211);
+            marker_656c5dd41ee4efd4865aea81700eca46.setIcon(icon_091d39b562cba6302eef93dd94c547e3);
         
     
-        var popup_80f9b5b29b1f431bb2318288009ca227 = L.popup({"maxWidth": 250});
+        var popup_b67637d3f35ba136f45348bd2a337265 = L.popup({"maxWidth": 250});
 
         
             
-                var html_88fb8e23638c8bdb690925009bee897c = $(`<div id="html_88fb8e23638c8bdb690925009bee897c" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Weequahala's Lower Mill Site / Johnson's Mills</h4>       <img src="images/spotswood_mills.jpg" style="width:200px;"><br>       <p>Weequahala's sawmill granted to Captain Leonard's widow after his death...</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
-                popup_80f9b5b29b1f431bb2318288009ca227.setContent(html_88fb8e23638c8bdb690925009bee897c);
+                var html_76f567240a7740ca0e62bd588d0a4efe = $(`<div id="html_76f567240a7740ca0e62bd588d0a4efe" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; font-size:12px; line-height:1.4;">       <h4 style="margin:5px 0;">Weequahala's Lower Mill Site / Johnson's Mills</h4>       <img src="images/spotswood_mills.jpg" style="width:200px;"><br>       <p>Weequahala's sawmill granted to Captain Leonard's widow after his death...</p>       <p><i>Time Period: pre-1700</i></p>     </div>     </div>`)[0];
+                popup_b67637d3f35ba136f45348bd2a337265.setContent(html_76f567240a7740ca0e62bd588d0a4efe);
             
         
 
-        marker_bffc475abaf59e29b409100a89c2ce99.bindPopup(popup_80f9b5b29b1f431bb2318288009ca227)
+        marker_656c5dd41ee4efd4865aea81700eca46.bindPopup(popup_b67637d3f35ba136f45348bd2a337265)
         ;
 
         
     
     
-            marker_bffc475abaf59e29b409100a89c2ce99.bindTooltip(
+            marker_656c5dd41ee4efd4865aea81700eca46.bindTooltip(
                 `<div>
                      Weequahala's Lower Mill Site / Johnson's Mills (pre-1700)
                  </div>`,
@@ -697,48 +741,48 @@
             );
         
     
-            var feature_group_b72e3d571f034de47fa020a09f6ffd0c = L.featureGroup(
+            var feature_group_0ea7ccfd15242400ced568502313d8a5 = L.featureGroup(
                 {}
-            ).addTo(map_a1a3ef1cf12b39b041a99fbd05d532f6);
+            ).addTo(map_86cc5652cc4d16fe931e9820c57134d1);
         
     
-            var poly_line_4495c019648e77d155eae452ba1ef7d1 = L.polyline(
+            var poly_line_34ebe9b005653180f29d42541b6cc22b = L.polyline(
                 [[40.488714166676665, -74.27901699762545], [40.488358002733264, -74.2816189760202], [40.458599367310995, -74.30644603179724], [40.43773318872686, -74.32218442686064], [40.411319140390354, -74.35994730545237], [40.41424854679237, -74.36605892339189], [40.391656224502874, -74.39038444366095], [40.30974655576768, -74.51673440796021], [40.2689444493127, -74.52374954344002], [40.177776558938746, -74.58379348777589], [40.137081813567065, -74.55927372411097], [40.1532487728515, -74.64688734827202], [40.08024511358344, -74.86127941291058]],
                 {"bubblingMouseEvents": true, "color": "brown", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "brown", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(feature_group_b72e3d571f034de47fa020a09f6ffd0c);
+            ).addTo(feature_group_0ea7ccfd15242400ced568502313d8a5);
         
     
-        var popup_4aee803d5a48463cdfd6c92eef2c8167 = L.popup({"maxWidth": "100%"});
+        var popup_68be4b1a55a0f361831659b5c1d8359f = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_873e8551586ec23e2d7ce45957132147 = $(`<div id="html_873e8551586ec23e2d7ce45957132147" style="width: 100.0%; height: 100.0%;">Lawrie's Road</div>`)[0];
-                popup_4aee803d5a48463cdfd6c92eef2c8167.setContent(html_873e8551586ec23e2d7ce45957132147);
+                var html_44935b57cda72492db2cee5ed61d4938 = $(`<div id="html_44935b57cda72492db2cee5ed61d4938" style="width: 100.0%; height: 100.0%;">Lawrie's Road</div>`)[0];
+                popup_68be4b1a55a0f361831659b5c1d8359f.setContent(html_44935b57cda72492db2cee5ed61d4938);
             
         
 
-        poly_line_4495c019648e77d155eae452ba1ef7d1.bindPopup(popup_4aee803d5a48463cdfd6c92eef2c8167)
+        poly_line_34ebe9b005653180f29d42541b6cc22b.bindPopup(popup_68be4b1a55a0f361831659b5c1d8359f)
         ;
 
         
     
     
-            var feature_group_2f480104d6f163ed49eb950f2ffc2c7c = L.featureGroup(
+            var feature_group_ab600f41df4b8da393afb6761069f6f8 = L.featureGroup(
                 {}
-            ).addTo(map_a1a3ef1cf12b39b041a99fbd05d532f6);
+            ).addTo(map_86cc5652cc4d16fe931e9820c57134d1);
         
     
-            var marker_5ab6b544a5acaad65ae625daf250555c = L.marker(
+            var marker_e467fecf0dda5c8316437f78878a1f42 = L.marker(
                 [40.414234829578284, -74.3661219204212],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_f72e401dd0c2ed1b7b520931ee2699ef = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Leonard\u0027s Tavern\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_5ab6b544a5acaad65ae625daf250555c.setIcon(div_icon_f72e401dd0c2ed1b7b520931ee2699ef);
+            var div_icon_2a74688004f09a32e422fcac39f93470 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Leonard\u0027s Tavern\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_e467fecf0dda5c8316437f78878a1f42.setIcon(div_icon_2a74688004f09a32e422fcac39f93470);
         
     
-            marker_5ab6b544a5acaad65ae625daf250555c.bindTooltip(
+            marker_e467fecf0dda5c8316437f78878a1f42.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -746,17 +790,17 @@
             );
         
     
-            var marker_c61d961507fde59b76664620c6e4ad8e = L.marker(
+            var marker_8b8d5f7230db06400be5e276d5854bcd = L.marker(
                 [40.3805, -74.4078],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_32b8093c175faec97935807d2a3e9361 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Weequahala\u0027s Uppermost Dam\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_c61d961507fde59b76664620c6e4ad8e.setIcon(div_icon_32b8093c175faec97935807d2a3e9361);
+            var div_icon_79f20de835d96c8194a8bf360914b82d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Weequahala\u0027s Uppermost Dam\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_8b8d5f7230db06400be5e276d5854bcd.setIcon(div_icon_79f20de835d96c8194a8bf360914b82d);
         
     
-            marker_c61d961507fde59b76664620c6e4ad8e.bindTooltip(
+            marker_8b8d5f7230db06400be5e276d5854bcd.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -764,17 +808,17 @@
             );
         
     
-            var marker_4c44dacdfb19d35d3602a6b31f02caf9 = L.marker(
+            var marker_e715e2b4b186ff2caf71478c3fac281a = L.marker(
                 [40.39106736222579, -74.38837644893785],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_6d58459cdab082dd713f6179be6f9ba8 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      St. Peter\u0027s Church\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_4c44dacdfb19d35d3602a6b31f02caf9.setIcon(div_icon_6d58459cdab082dd713f6179be6f9ba8);
+            var div_icon_7f91318a25f3818eaaa075453a5c6146 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      St. Peter\u0027s Church\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_e715e2b4b186ff2caf71478c3fac281a.setIcon(div_icon_7f91318a25f3818eaaa075453a5c6146);
         
     
-            marker_4c44dacdfb19d35d3602a6b31f02caf9.bindTooltip(
+            marker_e715e2b4b186ff2caf71478c3fac281a.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -782,17 +826,17 @@
             );
         
     
-            var marker_6bf200c2ace4743ebbefae8862dd2a1b = L.marker(
+            var marker_df621c09fb581cf8cf44fc9bad52e67d = L.marker(
                 [40.2604022197061, -74.27452218934268],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_5ff20b3bda12d83988e0a9653bff9208 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Freehold Hall of Records\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_6bf200c2ace4743ebbefae8862dd2a1b.setIcon(div_icon_5ff20b3bda12d83988e0a9653bff9208);
+            var div_icon_589a7e2562cb436e258fa0b54af5e757 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Freehold Hall of Records\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_df621c09fb581cf8cf44fc9bad52e67d.setIcon(div_icon_589a7e2562cb436e258fa0b54af5e757);
         
     
-            marker_6bf200c2ace4743ebbefae8862dd2a1b.bindTooltip(
+            marker_df621c09fb581cf8cf44fc9bad52e67d.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -800,17 +844,17 @@
             );
         
     
-            var marker_a7d6aff7f1229412fcfb6c7e05417a86 = L.marker(
+            var marker_497bbd5bcaa33dd08f21e9e83f9f2f6e = L.marker(
                 [40.50677736636713, -74.26535624026035],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_67f1325c22078163c5454ec2e5ded9f0 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Perth Amboy\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_a7d6aff7f1229412fcfb6c7e05417a86.setIcon(div_icon_67f1325c22078163c5454ec2e5ded9f0);
+            var div_icon_10ca6bffc69c8f1b4fa9b5528a242866 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Perth Amboy\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_497bbd5bcaa33dd08f21e9e83f9f2f6e.setIcon(div_icon_10ca6bffc69c8f1b4fa9b5528a242866);
         
     
-            marker_a7d6aff7f1229412fcfb6c7e05417a86.bindTooltip(
+            marker_497bbd5bcaa33dd08f21e9e83f9f2f6e.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -818,17 +862,17 @@
             );
         
     
-            var marker_422aeaafd8fea1124d41e1f06ee24651 = L.marker(
+            var marker_dc10a943e4aa1de24f65c400a55fbebb = L.marker(
                 [40.30974655576768, -74.51673440796021],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_c22a8033580ffc01a43015f91eb11d37 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Cranbury Village\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_422aeaafd8fea1124d41e1f06ee24651.setIcon(div_icon_c22a8033580ffc01a43015f91eb11d37);
+            var div_icon_5b3319c92b1ac610fd57348baa70c9a3 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Cranbury Village\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_dc10a943e4aa1de24f65c400a55fbebb.setIcon(div_icon_5b3319c92b1ac610fd57348baa70c9a3);
         
     
-            marker_422aeaafd8fea1124d41e1f06ee24651.bindTooltip(
+            marker_dc10a943e4aa1de24f65c400a55fbebb.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -836,17 +880,17 @@
             );
         
     
-            var marker_b60a870abaa0ada14bc10dc7c6b626b5 = L.marker(
+            var marker_ebef80b69050b0064e7afc0d359713cf = L.marker(
                 [40.08024511358344, -74.86127941291058],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_4e70cfd1dc256c6228bb0ec6d83889af = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Burlington Village\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_b60a870abaa0ada14bc10dc7c6b626b5.setIcon(div_icon_4e70cfd1dc256c6228bb0ec6d83889af);
+            var div_icon_84111222ec7c55e6d928bb8062669457 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Burlington Village\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_ebef80b69050b0064e7afc0d359713cf.setIcon(div_icon_84111222ec7c55e6d928bb8062669457);
         
     
-            marker_b60a870abaa0ada14bc10dc7c6b626b5.bindTooltip(
+            marker_ebef80b69050b0064e7afc0d359713cf.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -854,17 +898,17 @@
             );
         
     
-            var marker_14d7e25495232305eabe54b3d47757ed = L.marker(
+            var marker_50f7b0d7a806a72b94947a62a3dfd3ea = L.marker(
                 [40.153511076914754, -74.64716793597145],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_cb58e2643d0d6a314163b8ec34c11472 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Crosswicks\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_14d7e25495232305eabe54b3d47757ed.setIcon(div_icon_cb58e2643d0d6a314163b8ec34c11472);
+            var div_icon_56b87e9b22b235d66c28731049c8493f = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Crosswicks\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_50f7b0d7a806a72b94947a62a3dfd3ea.setIcon(div_icon_56b87e9b22b235d66c28731049c8493f);
         
     
-            marker_14d7e25495232305eabe54b3d47757ed.bindTooltip(
+            marker_50f7b0d7a806a72b94947a62a3dfd3ea.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -872,17 +916,17 @@
             );
         
     
-            var marker_b9a4f9cea44e719244d07a33d54bb80a = L.marker(
+            var marker_9144f38fd3637af2eb37734a7c7b2529 = L.marker(
                 [40.17780118592052, -74.5840998506824],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_3c679606fe0abcb8d423e184db695e0a = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Allentown\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_b9a4f9cea44e719244d07a33d54bb80a.setIcon(div_icon_3c679606fe0abcb8d423e184db695e0a);
+            var div_icon_a84ea1a41e8b51424b88c8d554a65586 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Allentown\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_9144f38fd3637af2eb37734a7c7b2529.setIcon(div_icon_a84ea1a41e8b51424b88c8d554a65586);
         
     
-            marker_b9a4f9cea44e719244d07a33d54bb80a.bindTooltip(
+            marker_9144f38fd3637af2eb37734a7c7b2529.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -890,17 +934,17 @@
             );
         
     
-            var marker_90904e60b925da4e933740bc8f46d098 = L.marker(
+            var marker_86d9cfdac70e53cdfb79816de1525288 = L.marker(
                 [40.37467972557094, -74.51125691094202],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_94d463faf2b30dcfb3403d08710e4866 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Dayton Village\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_90904e60b925da4e933740bc8f46d098.setIcon(div_icon_94d463faf2b30dcfb3403d08710e4866);
+            var div_icon_2e0b9b2e873305661db609093d02a63d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Dayton Village\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_86d9cfdac70e53cdfb79816de1525288.setIcon(div_icon_2e0b9b2e873305661db609093d02a63d);
         
     
-            marker_90904e60b925da4e933740bc8f46d098.bindTooltip(
+            marker_86d9cfdac70e53cdfb79816de1525288.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -908,17 +952,17 @@
             );
         
     
-            var marker_f2437ba5629262214b53a452439f181f = L.marker(
+            var marker_e1e7e8147036e6c4332f3fbfcc1901ff = L.marker(
                 [40.137081813567065, -74.55927372411097],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_284fc20e5c637b52e4795658bbfcc32a = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Walnford\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_f2437ba5629262214b53a452439f181f.setIcon(div_icon_284fc20e5c637b52e4795658bbfcc32a);
+            var div_icon_64ae3c341983df8d2330d23383548136 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Walnford\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_e1e7e8147036e6c4332f3fbfcc1901ff.setIcon(div_icon_64ae3c341983df8d2330d23383548136);
         
     
-            marker_f2437ba5629262214b53a452439f181f.bindTooltip(
+            marker_e1e7e8147036e6c4332f3fbfcc1901ff.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -926,17 +970,17 @@
             );
         
     
-            var marker_e428532541bdd611dae91a5e6d27347a = L.marker(
+            var marker_9e395a6c9aa7075903f3fac4b4b97436 = L.marker(
                 [40.268966315936225, -74.52382086352985],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_328b6c007be9a0cf9225b257878b73b1 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Hightstown\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_e428532541bdd611dae91a5e6d27347a.setIcon(div_icon_328b6c007be9a0cf9225b257878b73b1);
+            var div_icon_eab77636cb51147ddc04e0d50c016876 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Hightstown\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_9e395a6c9aa7075903f3fac4b4b97436.setIcon(div_icon_eab77636cb51147ddc04e0d50c016876);
         
     
-            marker_e428532541bdd611dae91a5e6d27347a.bindTooltip(
+            marker_9e395a6c9aa7075903f3fac4b4b97436.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -944,17 +988,17 @@
             );
         
     
-            var marker_459a208605f7d90d69b59b4665a7514d = L.marker(
+            var marker_77096d31b41ac228fd3fc97d9d11f915 = L.marker(
                 [40.488358002733264, -74.2816189760202],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_149d08ec95e6dc039399604eacc5c1d7 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Radford\u0027s Ferry/South Amboy\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_459a208605f7d90d69b59b4665a7514d.setIcon(div_icon_149d08ec95e6dc039399604eacc5c1d7);
+            var div_icon_86c050eea952b53e5c6e6b3ec3d21676 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Radford\u0027s Ferry/South Amboy\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_77096d31b41ac228fd3fc97d9d11f915.setIcon(div_icon_86c050eea952b53e5c6e6b3ec3d21676);
         
     
-            marker_459a208605f7d90d69b59b4665a7514d.bindTooltip(
+            marker_77096d31b41ac228fd3fc97d9d11f915.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -962,17 +1006,17 @@
             );
         
     
-            var marker_1024e4d1c784d96681bd0db022e83032 = L.marker(
+            var marker_3568babbaff9097e03ad5bbeaca7be72 = L.marker(
                 [40.49656620959912, -74.4450675387675],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_3ac7dd9c607f151540878c74a85e5d07 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Inian\u0027s Ferry/New Brunswick\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_1024e4d1c784d96681bd0db022e83032.setIcon(div_icon_3ac7dd9c607f151540878c74a85e5d07);
+            var div_icon_cc2d6682caa82b221758ac7c1da539a2 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Inian\u0027s Ferry/New Brunswick\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_3568babbaff9097e03ad5bbeaca7be72.setIcon(div_icon_cc2d6682caa82b221758ac7c1da539a2);
         
     
-            marker_1024e4d1c784d96681bd0db022e83032.bindTooltip(
+            marker_3568babbaff9097e03ad5bbeaca7be72.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -980,17 +1024,17 @@
             );
         
     
-            var marker_de2bcb4963fc8610e65581942099ab55 = L.marker(
+            var marker_8106a26179bc64782f6c5bc92ce0b0c2 = L.marker(
                 [40.35036598679335, -74.65704079580337],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_1cef4666868e327fe7f6b8b52a71d50b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Princeton\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_de2bcb4963fc8610e65581942099ab55.setIcon(div_icon_1cef4666868e327fe7f6b8b52a71d50b);
+            var div_icon_20553ed14084c90f8318c5fb179d5676 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Princeton\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_8106a26179bc64782f6c5bc92ce0b0c2.setIcon(div_icon_20553ed14084c90f8318c5fb179d5676);
         
     
-            marker_de2bcb4963fc8610e65581942099ab55.bindTooltip(
+            marker_8106a26179bc64782f6c5bc92ce0b0c2.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -998,17 +1042,17 @@
             );
         
     
-            var marker_6810a28998eab69a15325f0fd6ec6317 = L.marker(
+            var marker_58ea442a1cf2e69aeb9cd7a3204b404e = L.marker(
                 [40.213505523074744, -74.76584315397743],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_f1256311e56e4c543f4df09e7d98cc70 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Trenton\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_6810a28998eab69a15325f0fd6ec6317.setIcon(div_icon_f1256311e56e4c543f4df09e7d98cc70);
+            var div_icon_7ba8bf4d4069a413994c1976cc2ee9b7 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Trenton\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_58ea442a1cf2e69aeb9cd7a3204b404e.setIcon(div_icon_7ba8bf4d4069a413994c1976cc2ee9b7);
         
     
-            marker_6810a28998eab69a15325f0fd6ec6317.bindTooltip(
+            marker_58ea442a1cf2e69aeb9cd7a3204b404e.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -1016,17 +1060,17 @@
             );
         
     
-            var marker_56284e077ddf528aaed4948af7d365c6 = L.marker(
+            var marker_b8212cc53c119496637e33cec432a7bd = L.marker(
                 [40.38962205624657, -74.39100427110779],
                 {}
-            ).addTo(feature_group_2f480104d6f163ed49eb950f2ffc2c7c);
+            ).addTo(feature_group_ab600f41df4b8da393afb6761069f6f8);
         
     
-            var div_icon_500c0be33aeb0084ea1f3c80809a8bd6 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Weequahala\u0027s Lower Mill Site / Johnson\u0027s Mills\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_56284e077ddf528aaed4948af7d365c6.setIcon(div_icon_500c0be33aeb0084ea1f3c80809a8bd6);
+            var div_icon_3485bc6ed4e18eb2b4fe695967954729 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        font-family: Arial; \n        font-size: 9px; \n        color: black; \n        background-color: rgba(255,255,255,0.5); \n        padding: 4px; \n        border: 1px solid black; \n        max-width: 150px; \n        white-space: normal; \n        overflow-wrap: break-word;\"\u003e\n      Weequahala\u0027s Lower Mill Site / Johnson\u0027s Mills\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_b8212cc53c119496637e33cec432a7bd.setIcon(div_icon_3485bc6ed4e18eb2b4fe695967954729);
         
     
-            marker_56284e077ddf528aaed4948af7d365c6.bindTooltip(
+            marker_b8212cc53c119496637e33cec432a7bd.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -1034,22 +1078,22 @@
             );
         
     
-            var feature_group_6aeb15169cbf9e1abc2bcf23bd94afd1 = L.featureGroup(
+            var feature_group_d59cb7c99e0732577f303514058ca325 = L.featureGroup(
                 {}
-            ).addTo(map_a1a3ef1cf12b39b041a99fbd05d532f6);
+            ).addTo(map_86cc5652cc4d16fe931e9820c57134d1);
         
     
-            var marker_2bfd5e1ee1cfcf89fffc79d6cfc77738 = L.marker(
-                [40.43773318872686, -74.32218442686064],
+            var marker_3d638589b30fa81596823e8d9fbf7df7 = L.marker(
+                [40.391656224502874, -74.39038444366095],
                 {}
-            ).addTo(feature_group_6aeb15169cbf9e1abc2bcf23bd94afd1);
+            ).addTo(feature_group_d59cb7c99e0732577f303514058ca325);
         
     
-            var div_icon_f62f56f1ae4726334c314e53153c80bc = L.divIcon({"className": "empty", "html": "\n\u003cdiv style=\"\n    font-family: Arial;\n    font-size: 9px;\n    color: black;\n    background-color: rgba(255,255,255,0.5);\n    padding: 4px;\n    border: 1px solid black;\n    max-width: 125px;\n    white-space: normal;\n    overflow-wrap: break-word;\"\u003e\n  Lawrie\u0027s Road\n\u003c/div\u003e\n", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_2bfd5e1ee1cfcf89fffc79d6cfc77738.setIcon(div_icon_f62f56f1ae4726334c314e53153c80bc);
+            var div_icon_67687e2eee21ec6d9341b7c293db721f = L.divIcon({"className": "empty", "html": "\n\u003cdiv style=\"\n    font-family: Arial;\n    font-size: 9px;\n    color: black;\n    background-color: rgba(255,255,255,0.5);\n    padding: 4px;\n    border: 1px solid black;\n    max-width: 125px;\n    white-space: normal;\n    overflow-wrap: break-word;\"\u003e\n  Lawrie\u0027s Road\n\u003c/div\u003e\n", "iconAnchor": [0, 0], "iconSize": [150, null]});
+            marker_3d638589b30fa81596823e8d9fbf7df7.setIcon(div_icon_67687e2eee21ec6d9341b7c293db721f);
         
     
-            marker_2bfd5e1ee1cfcf89fffc79d6cfc77738.bindTooltip(
+            marker_3d638589b30fa81596823e8d9fbf7df7.bindTooltip(
                 `<div>
                      
                  </div>`,
@@ -1057,79 +1101,26 @@
             );
         
     
-            var marker_a26d6c1526ba8630173e660770187e7d = L.marker(
-                [40.2689444493127, -74.52374954344002],
-                {}
-            ).addTo(feature_group_6aeb15169cbf9e1abc2bcf23bd94afd1);
-        
-    
-            var div_icon_ea356f51720bc6c9395ec3353f73cbca = L.divIcon({"className": "empty", "html": "\n\u003cdiv style=\"\n    font-family: Arial;\n    font-size: 9px;\n    color: black;\n    background-color: rgba(255,255,255,0.5);\n    padding: 4px;\n    border: 1px solid black;\n    max-width: 125px;\n    white-space: normal;\n    overflow-wrap: break-word;\"\u003e\n  Lawrie\u0027s Road\n\u003c/div\u003e\n", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_a26d6c1526ba8630173e660770187e7d.setIcon(div_icon_ea356f51720bc6c9395ec3353f73cbca);
-        
-    
-            marker_a26d6c1526ba8630173e660770187e7d.bindTooltip(
-                `<div>
-                     
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_0d710278ffa6a12e4e609741cb89571e = L.marker(
-                [40.137081813567065, -74.55927372411097],
-                {}
-            ).addTo(feature_group_6aeb15169cbf9e1abc2bcf23bd94afd1);
-        
-    
-            var div_icon_a78ac14ff0f1d5004b4d5619ed0501d8 = L.divIcon({"className": "empty", "html": "\n\u003cdiv style=\"\n    font-family: Arial;\n    font-size: 9px;\n    color: black;\n    background-color: rgba(255,255,255,0.5);\n    padding: 4px;\n    border: 1px solid black;\n    max-width: 125px;\n    white-space: normal;\n    overflow-wrap: break-word;\"\u003e\n  Lawrie\u0027s Road\n\u003c/div\u003e\n", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_0d710278ffa6a12e4e609741cb89571e.setIcon(div_icon_a78ac14ff0f1d5004b4d5619ed0501d8);
-        
-    
-            marker_0d710278ffa6a12e4e609741cb89571e.bindTooltip(
-                `<div>
-                     
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_061fbf4406e00636db935e7851b676b7 = L.marker(
-                [40.08024511358344, -74.86127941291058],
-                {}
-            ).addTo(feature_group_6aeb15169cbf9e1abc2bcf23bd94afd1);
-        
-    
-            var div_icon_bc7e6870fc8a18a8c8b1c18c095ac674 = L.divIcon({"className": "empty", "html": "\n\u003cdiv style=\"\n    font-family: Arial;\n    font-size: 9px;\n    color: black;\n    background-color: rgba(255,255,255,0.5);\n    padding: 4px;\n    border: 1px solid black;\n    max-width: 125px;\n    white-space: normal;\n    overflow-wrap: break-word;\"\u003e\n  Lawrie\u0027s Road\n\u003c/div\u003e\n", "iconAnchor": [0, 0], "iconSize": [150, null]});
-            marker_061fbf4406e00636db935e7851b676b7.setIcon(div_icon_bc7e6870fc8a18a8c8b1c18c095ac674);
-        
-    
-            marker_061fbf4406e00636db935e7851b676b7.bindTooltip(
-                `<div>
-                     
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var layer_control_ba5a0c0101bdedb295ca470dfa741421 = {
+            var layer_control_e96df5d5ce7080faaed857f8222e18f2 = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_a9193150637ac8859e7e69acf82176cd,
+                    "openstreetmap" : tile_layer_d9cf3de674f5327a4d5141e5492e92fc,
                 },
                 overlays :  {
-                    "1700-1725" : feature_group_0f592f7ac2db16fcf813bcd990c38ffe,
-                    "1725-1750" : feature_group_e95b885f8f2d7119c51b3eb4254d68f3,
-                    "pre-1700" : feature_group_e5dab0e82d27466071be3e65d5d1581c,
-                    "Historical Road" : feature_group_b72e3d571f034de47fa020a09f6ffd0c,
-                    "Location Labels" : feature_group_2f480104d6f163ed49eb950f2ffc2c7c,
-                    "Road Labels" : feature_group_6aeb15169cbf9e1abc2bcf23bd94afd1,
+                    "King\u0027s Highway" : feature_group_055067de49c44523f2171799f9fe60bb,
+                    "1700-1725" : feature_group_6fb433c789b1729dea7da8e0e327c837,
+                    "1725-1750" : feature_group_7cd07f7713c2666d7c05796fe42fd573,
+                    "pre-1700" : feature_group_5263b62afbb347e4d34e8b059b23e59a,
+                    "Historical Road" : feature_group_0ea7ccfd15242400ced568502313d8a5,
+                    "Location Labels" : feature_group_ab600f41df4b8da393afb6761069f6f8,
+                    "Road Labels" : feature_group_d59cb7c99e0732577f303514058ca325,
                 },
             };
             L.control.layers(
-                layer_control_ba5a0c0101bdedb295ca470dfa741421.base_layers,
-                layer_control_ba5a0c0101bdedb295ca470dfa741421.overlays,
+                layer_control_e96df5d5ce7080faaed857f8222e18f2.base_layers,
+                layer_control_e96df5d5ce7080faaed857f8222e18f2.overlays,
                 {"autoZIndex": true, "collapsed": true, "position": "topright"}
-            ).addTo(map_a1a3ef1cf12b39b041a99fbd05d532f6);
-            feature_group_2f480104d6f163ed49eb950f2ffc2c7c.remove();
+            ).addTo(map_86cc5652cc4d16fe931e9820c57134d1);
+            feature_group_ab600f41df4b8da393afb6761069f6f8.remove();
         
     
             // Track tap timing for each marker
@@ -1137,7 +1128,7 @@
             var tapTimeout = null;
 
             // Iterate over all layers to find markers
-            map_a1a3ef1cf12b39b041a99fbd05d532f6.eachLayer(function(layer) {
+            map_86cc5652cc4d16fe931e9820c57134d1.eachLayer(function(layer) {
                 if (layer instanceof L.Marker && layer.getTooltip()) {
                     // Unbind the default click handler to prevent automatic popup
                     layer.off('click');
@@ -1161,7 +1152,7 @@
 
                         // Single tap: Show tooltip temporarily
                         if (tapTimes[markerId].count === 1) {
-                            map_a1a3ef1cf12b39b041a99fbd05d532f6.eachLayer(function(l) {
+                            map_86cc5652cc4d16fe931e9820c57134d1.eachLayer(function(l) {
                                 if (l.getTooltip() && l.isTooltipOpen()) {
                                     l.closeTooltip();
                                 }
